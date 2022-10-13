@@ -30,23 +30,23 @@ from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 from timm.models.resnet import resnet26d, resnet50d
 from timm.models.registry import register_model
 
-from irpe import get_rpe_config
+# from irpe import get_rpe_config
 
-from irpe import build_rpe
+# from irpe import build_rpe
 
 # faizan's linear attention
 from fast_transformers.attention import LinearAttention
 from fast_transformers.masking import LengthMask, TriangularCausalMask, FullMask
 from fast_transformers.attention import AttentionLayer
 
-rpe_config = get_rpe_config(
-    ratio=1.9,
-    method="product",
-    mode='ctx',
-    shared_head=True,
-    skip=1,
-    rpe_on='k',
-)
+# rpe_config = get_rpe_config(
+#     ratio=1.9,
+#     method="product",
+#     mode='ctx',
+#     shared_head=True,
+#     skip=1,
+#     rpe_on='k',
+# )
 
 
 
@@ -131,10 +131,10 @@ class Attention(nn.Module):
         self.proj = nn.Linear(dim, dim)
         self.proj_drop = nn.Dropout(proj_drop)
 
-        self.rpe_q, self.rpe_k, self.rpe_v = \
-        build_rpe(rpe_config,
-                  head_dim=head_dim,
-                  num_heads=num_heads)
+        # self.rpe_q, self.rpe_k, self.rpe_v = \
+        # build_rpe(rpe_config,
+                #   head_dim=head_dim,
+                #   num_heads=num_heads)
 
     def forward(self, x):
         # print(x.shape,'input')

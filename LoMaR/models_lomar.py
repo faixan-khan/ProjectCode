@@ -194,7 +194,7 @@ class MaskedAutoencoderViT(nn.Module):
         in_window_mask_number = int(window_size*window_size*mask_ratio)  
 
         assert in_window_mask_number>=1
-        in_window_patches =row.unsqueeze(1).expand(window_number,window_size,window_size)  + column.unsqueeze(-1).expand(left.shape[0],window_size,window_size)
+        in_window_patches = row.unsqueeze(1).expand(window_number,window_size,window_size)  + column.unsqueeze(-1).expand(left.shape[0],window_size,window_size)
         in_window_patches = in_window_patches.view(window_number,-1)
 
 
@@ -222,13 +222,16 @@ class MaskedAutoencoderViT(nn.Module):
         x_masked[mask_indices]=self.mask_token
 
  
-        return x_masked, sorted_patch_to_keep,mask_indices
+        return x_masked, sorted_patch_to_keep,mask_indices, ids_mask_in_window
 
 
     def forward_encoder(self, x, window_size, num_window, mask_ratio):
         # embed patches
         x = self.patch_embed(x)
         x = x.type(torch.float32)
+
+        # to check the position encoding 
+        # t1 = x + self.pos_embed[:, 1:, :] #since we are adding the positional embeddings after masking no need for this, right?
 
         N, _, C = x.shape
         H = W = self.img_size // self.patch_size
@@ -242,10 +245,26 @@ class MaskedAutoencoderViT(nn.Module):
         rand_left_locations = torch.randperm(W-window_size+1,device=x.device)[:num_window]
 
         # generate the sampled and mask patches from the small windows
-        x, ids_restore,mask_indices = self.generate_window_patches(x, rand_left_locations, rand_top_locations, window_size, mask_ratio)
-                
+        x, ids_restore,mask_indices, ids_mask_in_window = self.generate_window_patches(x, rand_left_locations, rand_top_locations, window_size, mask_ratio)
+
+        x = x + torch.gather(self.pos_embed.repeat(x.shape[0],1,1), dim=1, index = ids_restore.unsqueeze(-1).repeat(1, 1, x.shape[-1])+1)
+
+        # to check and confirm the position encoding
+        # t2 = x
+        # t1_ = torch.gather(t1, dim=1, index = ids_restore.unsqueeze(-1).repeat(1, 1, x.shape[-1]))
+        # s=0
+        # o=0
+        # for i in range(0,49):
+            # o+=1
+            # if torch.equal(t2[0][i],t1_[0][i]):
+                # s+=1
+        # print(s,o,s/o) # s should be 17, o 56, s/0 = 0.3
+        # print(t2 == t1_)
+        # exit()
         # append the cls tokens at the begining
-        cls_tokens = self.cls_token.expand(x.shape[0], -1, -1)
+
+        cls_token = self.cls_token + self.pos_embed[:, :1, :]
+        cls_tokens = cls_token.expand(x.shape[0], -1, -1)
         x = torch.cat((cls_tokens, x), dim=1)
 
         # apply Transformer blocks

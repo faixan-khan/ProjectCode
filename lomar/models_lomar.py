@@ -201,17 +201,16 @@ class MaskedAutoencoderViT(nn.Module):
         in_window_patches = in_window_patches.view(window_number,-1)
 
         # faizan's code starts here
-        if neigh_ratio > 0:
-            indices_neigh = torch.arange(0,W*H,device=x.device).expand(window_number,W*H)
-            indices_neigh = indices_neigh.scatter(-1,in_window_patches,-1)
-            indices_neigh,_ = torch.sort(indices_neigh,dim=-1)
-            indices_neigh = indices_neigh.expand(N,window_number,W*H)
-            indices_neigh_keep = indices_neigh[:,:,(window_size*window_size):]
-            noise_neigh = torch.rand(N,window_number,indices_neigh_keep.size(2),device=x.device)
-            ids_neigh_shuffle = torch.argsort(noise_neigh,dim=-1)
-            out_window_mask_number = int(((W*H)-(window_size*window_size))*neigh_ratio)
-            ids_keep_neigh = ids_neigh_shuffle[:,:,:out_window_mask_number]
-            neigh_keeps = torch.gather(indices_neigh_keep, -1, ids_keep_neigh)
+        indices_neigh = torch.arange(0,W*H,device=x.device).expand(window_number,W*H)
+        indices_neigh = indices_neigh.scatter(-1,in_window_patches,-1)
+        indices_neigh,_ = torch.sort(indices_neigh,dim=-1)
+        indices_neigh = indices_neigh.expand(N,window_number,W*H)
+        indices_neigh_keep = indices_neigh[:,:,(window_size*window_size):]
+        noise_neigh = torch.rand(N,window_number,indices_neigh_keep.size(2),device=x.device)
+        ids_neigh_shuffle = torch.argsort(noise_neigh,dim=-1)
+        out_window_mask_number = int(((W*H)-(window_size*window_size))*neigh_ratio)
+        ids_keep_neigh = ids_neigh_shuffle[:,:,:out_window_mask_number]
+        neigh_keeps = torch.gather(indices_neigh_keep, -1, ids_keep_neigh)
 
         # sample the masked patch ids
         ids_mask_in_window =self.sample_patch_index(x,in_window_patches,in_window_mask_number)
@@ -228,12 +227,10 @@ class MaskedAutoencoderViT(nn.Module):
 
         # gather the masked patches
         x_masked = torch.gather(x, dim=1, index=sorted_patch_to_keep.unsqueeze(-1).repeat(1, 1, D)).clone()
-        x_original = x_masked
 
         #faizan's code
-        if out_window_mask_number > 0:
-            neigh_keeps = neigh_keeps.view(N*window_number,-1)
-            x_neigh = torch.gather(x, dim=1, index=neigh_keeps.unsqueeze(-1).repeat(1, 1, D)).clone()
+        neigh_keeps = neigh_keeps.view(N*window_number,-1)
+        x_neigh = torch.gather(x, dim=1, index=neigh_keeps.unsqueeze(-1).repeat(1, 1, D)).clone()
         # indices for recontruction
         mask_indices = ((sorted_patch_to_keep.unsqueeze(-1)- ids_mask_in_window.unsqueeze(1))==0).sum(-1)==1
 
@@ -244,7 +241,7 @@ class MaskedAutoencoderViT(nn.Module):
         if out_window_mask_number > 0:
             x_masked = torch.cat((x_masked, x_neigh), dim=1)
 
-        return x_masked, sorted_patch_to_keep, mask_indices, neigh_keeps, x_original
+        return x_masked, sorted_patch_to_keep, mask_indices, neigh_keeps
 
 
     def forward_encoder(self, x, window_size, num_window, mask_ratio, neigh_ratio):
@@ -268,7 +265,7 @@ class MaskedAutoencoderViT(nn.Module):
         rand_left_locations = torch.randperm(W-window_size+1,device=x.device)[:num_window]
 
         # generate the sampled and mask patches from the small windows
-        x, ids_restore,mask_indices, neigh_indices, x_original = self.generate_window_patches(x, rand_left_locations, rand_top_locations, window_size, mask_ratio, neigh_ratio)
+        x, ids_restore,mask_indices, neigh_indices = self.generate_window_patches(x, rand_left_locations, rand_top_locations, window_size, mask_ratio, neigh_ratio)
         
         indices = torch.cat((ids_restore,neigh_indices), dim=1)
 
@@ -295,10 +292,8 @@ class MaskedAutoencoderViT(nn.Module):
         # apply Transformer blocks
         for blk in self.blocks:
             x = blk(x)
-        for blk in self.blocks:
-            x_original = blk(x_original)
-        # x = self.norm(x)
-        # x = self.encoder_pred(x)
+        x = self.norm(x)
+        x = self.encoder_pred(x)
 
         # remove cls token
         x = x[:, 1:, :] # THEY DONT DO THIS IN MAE, SHOULD WE DO IT?
@@ -307,7 +302,7 @@ class MaskedAutoencoderViT(nn.Module):
         x = x[:,:window_size*window_size:,:]
         # print(x.shape,'after removing the neigh prediction')
 
-        return x, mask_indices, ids_restore, x_original
+        return x, mask_indices, ids_restore
 
 
 

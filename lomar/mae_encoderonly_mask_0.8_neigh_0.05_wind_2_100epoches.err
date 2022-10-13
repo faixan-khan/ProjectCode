@@ -1,0 +1,285 @@
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  FutureWarning,
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/transforms.py:853: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  "Argument interpolation should be of type InterpolationMode instead of int. "
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/transforms.py:853: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  "Argument interpolation should be of type InterpolationMode instead of int. "
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/transforms.py:853: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  "Argument interpolation should be of type InterpolationMode instead of int. "
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/transforms.py:853: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  "Argument interpolation should be of type InterpolationMode instead of int. "
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/tensorboard/summary/writer/event_file_writer.py", line 211, in run
+    self._record_writer.write(data)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/tensorboard/summary/writer/record_writer.py", line 39, in write
+    self._writer.write(header + header_crc + data + footer_crc)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/io/gfile.py", line 474, in write
+    self.fs.append(self.filename, file_content, self.binary_mode)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/io/gfile.py", line 139, in append
+    self._write(filename, file_content, "ab" if binary_mode else "a")
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/io/gfile.py", line 143, in _write
+    with io.open(filename, mode, encoding=encoding) as f:
+FileNotFoundError: [Errno 2] No such file or directory: b'./save/logs/mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches/events.out.tfevents.1664403529.gpu213-18.127897.0'
+
+[E ProcessGroupNCCL.cpp:587] [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(OpType=ALLREDUCE, Timeout(ms)=1800000) ran for 1809756 milliseconds before timing out.
+[E ProcessGroupNCCL.cpp:587] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(OpType=ALLREDUCE, Timeout(ms)=1800000) ran for 1806012 milliseconds before timing out.
+[E ProcessGroupNCCL.cpp:587] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(OpType=ALLREDUCE, Timeout(ms)=1800000) ran for 1804197 milliseconds before timing out.
+[E ProcessGroupNCCL.cpp:341] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data. To avoid this inconsistency, we are taking the entire process down.
+Fatal Python error: Aborted
+
+Thread 0x00002b5cc7017700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002b5c1f2fe700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002b5cc8a24700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002b5cc8421700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002b5cc801f700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threadin[E ProcessGroupNCCL.cpp:341] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data. To avoid this inconsistency, we are taking the entire process down.
+g.py", line 864 in run
+  File "/homFatal Python error: eAborted/
+
+khThread 0xa00002ba13e803700n (most recent call first):
+f  File f/"m/ihnoimceo/nkdhaa3n/fefn/vmsi/nliocmoanrd/al3i/be/npvyst/hloonm3a.r6//ltihbr/epaydtihnogn.3p.y6"/, line t916h in r_ebaodoitnsgt.rpayp"_, line i295n in nweari
+t  File 
+"  File /ho"m/eh/okmhea/nkfhfa/nmfifn/imcionnidcao3n/dean3v/se/nlvosm/alro/mlairb//lpiybt/hpoynt3h.o6n/3t.h6r/emaudlitnigp.rpoyc"e, line s884s in i_nbgo/oqtusetureasp.
+p
+yThread 0x"00002b5cc8220700 (most recent call first):
+, line 222 in _  File f"e/ehdo
+m  File e"//khhoamnef/fk/hmainnfifc/omnidnai3c/oenndvas3//leonmvasr//lloimba/rp/yltihbo/np3y.t6h/otnh3r.e6a/dtihnrge.apdyi"n, line g295. in pwya"i, line t864
+ in   File r"u/nh
+o  File m"e//hkohmaen/fkfh/amnifnfi/cmoinndiac3o/nednav3s//elnovmsa/rl/olmiabr//plyitbh/opny3t.h6o/nm3u.l6t/itphrroecaedsisng.ipnyg"/q, line u916e in u_ebso.optys"t, line r222a in p__fienende
+r  File 
+"  File /"h/ohmoem/ek/khanff/miniconda3/enhvasn/flfo/mmairn/ilciobn/dpay3t/heonnv3s./6l/otmharre/aldiibn/gp.yptyh"o, line n8843 in .6_/btohortesatdrianpg
+.
+pThread 0xy00002ba23bc1d700" (most recent call first):
+, line 864 in   File r"un/
+h  File o"m/eh/okmhea/nkfhfa/nmfifn/imcionnidcao3n/dean3v/se/nlvosm/alro/mlairb//lpiybt/hpoynt3h.o6n/3t.h6r/etahdrienagd.ipnyg"., line p295y in "w, line a916i in t_
+bo  File o"t/shtormaep/_kihnannefrf
+/  File m"i/nhiocmoen/dkah3a/nefnfv/sm/ilnoimcaorn/dlai3b//epnyvtsh/olno3m.a6r//mluilbt/ippyrtohcoens3s.i6n/gt/hqrueeaudeisn.gp.yp"y, line "222, line  in 884_ in f_ebeodo
+t  File s"t/rhaopm
+e
+/Thread 0xk00002b5cc7a1c700h (most recent call first):
+a  File n"f/fh/ommien/ikchoanndfaf3//meinnvisc/olnodmaa3r//elnivbs//plyotmhaorn/3l.i6b//tphyrtehaodni3n.g6./ptyh"r, line e864a in driunng
+.  File p"y/"h, line o295m in ew/akihta
+n  File f"f//hmoimnei/ckohnadnaf3f//emnivnsi/cloonmdaar3//leinbv/sp/yltohmoanr3/.l6i/bt/hpryetahdoinn3g..6p/ym"u, line l916t in i_pbroooctesstsrianpg_/iqnuneeure
+s  File ."p/yh"o, line m222e in /_kfheaendf
+f/mi  File n"i/choonmdea/3k/heannvfsf//lmoimnairc/olnidba/3p/yetnhvosn/3l.o6m/atrh/rleiabd/ipnygt.hpoyn"3, line .8846 in /_tbhoroetasdtirnagp.
+p
+yThread 0x"00002ba23b017700, line  (most recent call first):
+864  File  in "r/uhno
+m  File e"//khhoamnef/fk/hmainnfifc/omnidnai3c/oenndvas3//leonmvasr//lloimba/rp/yltihbo/np3y.t6h/otnh3r.e6a/dtihnrge.apdyi"n, line g295. in pwya"i, line t916
+ in _  File b"o/ohtosmter/akph_ainnfnfe/rm
+i  File n"i/choonmdea/3k/heannvfsf//lmoimnairc/olnidba/3p/yetnhvosn/3l.o6m/amru/lltiibp/rpoyctehsosni3n.g6//qtuherueeasd.ipnyg"., line p222y in "_, line f884e in e_db
+o  File o"t/shtormaep/
+k
+hThread 0xa00002b5cc7c1d700n (most recent call first):
+ff/mi  File n"i/choonmdea/3k/heannvfsf//lmoimnairc/olnidba/3p/yetnhvosn/3l.o6m/atrh/rleiabd/ipnygt.hpoyn"3, line .8646 in /rtuhnr
+e  File a"d/ihnogm.ep/yk"h, line a295n in fwfa/imti
+nic  File o"n/dhao3m/ee/nkvhsa/nlfofm/amri/nliicbo/npdyat3h/oenn3v.s6//ltohmraera/dliinbg/.ppyyt"h, line o916n in 3_.b6o/omtuslttriappr_oicnensesri
+n  File g"//qhuoemuee/sk.hpayn"f, line f222/ in m_ifneiecdo
+nda3  File /"e/nhvosm/el/okmhaarn/flfi/bm/ipnyitchoonnd3a.36//etnhvrse/aldoimnagr./plyi"b, line /884p in y_tbhooont3s.t6r/atph
+r
+eThread 0xa00002ba23ba1c700d (most recent call first):
+i  File n"g/.hpoym"e, line /864k in hraunnf
+f  File /"m/ihnoimceo/nkdhaa3n/fefn/vmsi/nliocmoanrd/al3i/be/npvyst/hloonm3a.r6//ltihbr/epaydtihnogn.3p.y6"/, line t295h in rweaaidti
+n  File g"./phyo"m, line e916/ in k_hbaonoftfs/tmrianpi_cionnndear3
+/  File e"n/vhso/mleo/mkahra/nlfifb//mpiyntihcoonn3d.a63//meunlvtsi/plroomcaers/sliinbg//pqyutehuoens3..p6y/"t, line h222r in e_afdeiendg
+.  File p"y/"h, line o884m in e_/bkohoatnsftfr/ampi
+n
+iThread 0xc00002b5cc7e1e700o (most recent call first):
+n  File d"a/3h/oemnev/sk/hlaonmfafr//mliinbi/cpoyntdhao3n/3e.n6v/st/hlroemaadri/nlgi.bp/yp"y, line t864h in ornu3n.
+6  File /"t/hhroemaed/iknhga.npfyf"/, line m295i in nwiaciotn
+da3/  File e"n/vhso/mleo/mkahra/nlfifb//mpiyntihcoonn3d.a63//tehnrvesa/dlionmga.rp/yl"i, line b916/ in p_ybtohootns3t.r6a/pm_uilntnieprr
+o  File c"e/shsoimneg//kqhueues.apnyf"f, line /222m in i_nfieceodn
+d  File a"3//heonmves//klhoamnafrf//lmiibn/ipcyotnhdoan33/.e6n/vtsh/rleoamdairn/gl.ipby/"p, line y884t in h_obno3o.t6s/ttrharpe
+a
+dThread 0xi00002ba23be1e700n (most recent call first):
+g  File ."p/yh"o, line m864e in /rkuhna
+n  File f"f//hmoimnei/ckohnadnaf3f//emnivnsi/cloonmdaar3/l/iebn/vpsy/tlhoomna3r./6l/itbh/rpeyatdhionng3..p6y/"t, line h295r in ewaadiitn
+g  File ."p/yh"o, line m916e in /_kbhoaontfsft/rmaipn_iicnonnedra
+3/e  File n"v/sh/olmoem/akrh/alnifbf//pmyitnhiocno3n.d6a/3m/uelntvisp/rloocmeasrs/ilnigb//qpuyetuheosn.3p.y6"/, line t222h in r_efaedeidn
+g  File ."p/yh"o, line m884e in /_kbhoaontfsft/rmaipn
+i
+cThread 0xo00002b5cc8c25700n (most recent call first):
+d  File a"3//heonmves//klhoamnafrf//lmiibn/ipcyotnhdoan33/.e6n/vtsh/rleoamdairn/gl.ipby/"p, line y864t in hrounn3
+.  File 6"//thhormeea/dkihnagn.fpfy/"m, line i295n in iwcaointd
+a  File 3"//ehnovmse//lkohmaanrf/fl/imbi/npiyctohnodna33./6e/ntvhsr/elaodmianrg/.lpiyb"/, line p916y in t_hboono3t.s6t/rmaupl_tiinpnreorc
+e  File s"s/ihnogm/eq/ukehuaensf.fp/ym"i, line n222i in c_ofnedead3
+/  File e"n/vhso/mleo/mkahra/nlfifb//mpiyntihcoonnda33./6e/ntvhsr/elaodmianrg/.lpiyb"/, line p884y in t_hboono3t.s6t/rtahpr
+e
+aThread 0xd00002ba23b61a700i (most recent call first):
+ng  File ."p/yh"o, line m864e in /rkuhna
+n  File f"f//hmoimnei/ckohnadnaf3f//emnivnsi/cloonmdaar3//leinbv/sp/yltohmoanr3/.l6i/bt/hpryetahdoinn3g..6p/yt"h, line r295e in awdaiintg
+.  File p"y/"h, line o916m in e_/bkohoatnsftfr/ampi_niincnoenrd
+a  File 3"//ehnovmse//lkohmaanrf/fl/imbi/npiyctohnodna33./6e/nmvusl/tliopmraorc/elsisbi/npgy/tqhuoenu3e.s6./ptyh"r, line e222a in d_ifnege.dp
+y  File "", line /884h in o_mbeo/okthsatnrfafp/
+m
+iThread 0xn00002b5cc8823700i (most recent call first):
+co  File nd"a/3h/oemnev/sk/hlaonmfafr//mliinbi/cpoyntdhao3n/3e.n6v/st/hlroemaadri/nlgi.bp/yp"y, line t864h in ornu3n.
+6  File /"s/ihtoem-ep/akchkaangfefs//mtionriccho/nudtai3l/se/ndvast/al/o_muatri/llsi/bp/ipny_tmheomno3r.y6./ptyh"readin, line g50. in ppyi"n, line _916m in e_mbooroyt
+s  File t"r/ahpo_mien/nkehra
+n  File f"f//hmoimnei/ckohnadnaf3f//emnivnsi/cloonmdaar3//leinbv/sp/ythloonm3a.r6//lsiibt/ep-yptahcokna3g.e6s//tthorrecahd/iuntgi.lpsy/"d, line a884t in a_/b_ouottisltsr/appi
+n
+_Thread 0xm00002ba23ae16700e (most recent call first):
+m  File o"r/yh.opmye"/khan, line f58f in /<mliinsitccoonmdpa>3
+/  File e"n/vhso/mleo/mkahra/nlfifb//mpiyntihcoonn3d.a63//tehnrvesa/dlionmga.rp/yl"i, line b295/ in pwyatihto
+n3.  File 6"//shiotmee-/pkahcaknafgfe/sm/itnoirccohn/duat3i/lesn/vdsa/tlao/m_aurt/illisb//ppiynt_hmoenm3o.r6y/.mpuyl"t, line i58p in rpoicne_smseimnogr/yq
+u  File e"u/ehso.mpey/"k, line h222a in n_fffe/emdi
+n  File i"c/ohnodmae3//kehnavnsf/fl/ommianri/cloinbd/ap3y/tehnovns3/.l6o/msairt/el-ipba/cpkyatgheosn/3t.o6r/cthh/ruetaidlisn/gd.aptya"/, line _864u in triulns
+/  File p"i/nh_ommeem/okrhya.npfyf"/, line m34i in n_ipcionn_dmae3m/oernyv_sl/oloopm
+ar  File /"l/ihbo/mpey/tkhhoann3f.f6//mtihnriecaodnidnag3./peyn"v, line s916/ in l_obmoaort/sltirba/pp_yitnhnoenr3
+.  File 6"//thhormeea/dkihnagn.fpfy/"m, line i864n in ircuonn
+da3/e  File n"v/sh/olmoem/akrh/alnifbf//pmyitnhiocno3n.d6a/3t/hernevasd/ilnogm.apry/"l, line i884b in /_pbyotohtosnt3r.a6p/
+t
+hThread 0xr00002ba23a411700e (most recent call first):
+a  File d"i/nhgo.mpey/"k, line h916a in n_fbfo/omtisntircaopn_dian3n/eern
+v  File s"//lhoommaer//klhiabn/fpfy/tmhionni3c.o6n/dtah3r/eeandvisn/gl.opmya"r, line /295l in iwba/ipty
+t  File h"o/nh3o.m6e//tkhhraenafdfi/nmgi.npiyc"o, line n884d in a_3b/oeontvsst/rlaopm
+a
+rThread 0x/lib00002b5cc761a700/ (most recent call first):
+p
+yThread 0xthon00002b5cc72187003 (most recent call first):
+.
+6Thread 0x/mul00002b5cc781b700t (most recent call first):
+i
+pThread 0xr00002b5cc7419700o (most recent call first):
+c
+eThread 0xs00002b5ab977e840s (most recent call first):
+i  File ng/q"u/ehuoemse./pkyh"a, line n222f in f_/fmeiendi
+c  File o"n/dhao3m/ee/nkvhsa/nlfofm/amri/nliicbo/npdyat3h/oenn3v.s6//lsoimtaer-/plaicbk/apgyetsh/otno3r.c6h//tdhirsetardiibnugt.epdy/"d, line i864s in trruinb
+u  File t"e/dh_ocm1e0/dk.hpayn"ff/m, line i1285n in iacloln_drae3d/uecnev
+s  File /"l/ohmoamre//lkihba/npfyft/cvpr/lomahro/nu3t.i6l//tmhirseca.dpiyn"g.py, line "342, line  in 916a in l_lb_oroetdsutcrea_pm_eiannn
+e  File r
+  File ""//hhoommee//kkhhaannffff//mcivnpirc/olnodmaa3r//eennvgsi/nleo_mparre/tlriabi/np.yptyh"on3., line 668/ in thretardaiinng_.opnye"_, line e884p in o_cbho
+o  File tstrap
+"
+mThread 0xa00002ba23b81b700i (most recent call first):
+n  File _"p/rheotmrea/iknh_alnofmfa/rm.ipnyi"con, line d215a in 3/emnavisn/
+lom  File ar/lib"//phyotmheo/nk3h.a6n/ftfh/rmeiandiicnogn.dpay3"/, line e295n in vwsa/ilto
+m  File a"r//hloimbe//pkyhtahnofnf3/.m6i/nsiictoen-dpaa3c/keangvess//ltoomrch/dairs/tlriibb/uptyetdh/oenl3a.s6t/imcu/lmtuilptriopcreoscseisnsgi/nqgu/eeurerso.rpsy/"_, line _222i in n_ifte_e_d.
+p  File y""/ho, line m345e in /khwarnafpfp/emri
+nic  File ond"am3a/ienn_vpsr/eltormaairn/_lliobm/apry.tphyo"n3.6, line /241t in hre<amdoidnugl.ep>y
+", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002ba23b218700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 295 in wait
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/multiprocessing/queues.py", line 222 in _feed
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002ba23c01f700 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/utils/data/_utils/pin_memory.py", line 38 in _pin_memory_loop
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 864 in run
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 916 in _bootstrap_inner
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/threading.py", line 884 in _bootstrap
+
+Thread 0x00002ba23a813700 (most recent call first):
+
+Thread 0x00002ba23a612700 (most recent call first):
+
+Thread 0x00002ba23aa14700 (most recent call first):
+
+Thread 0x00002ba23ac15700 (most recent call first):
+
+Thread 0x00002ba034b72840 (most recent call first):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/distributed_c10d.py", line 1285 in all_reduce
+  File "/home/khanff/cvpr/lomar/util/misc.py", line 342 in all_reduce_mean
+  File "/home/khanff/cvpr/lomar/engine_pretrain.py", line 68 in train_one_epoch
+  File "main_pretrain_lomar.py", line 215 in main
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 345 in wrapper
+  File "main_pretrain_lomar.py", line 241 in <module>
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 127897 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 127900 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: -6) local_rank: 1 (pid: 127898) of binary: /home/khanff/miniconda3/envs/lomar/bin/python
+Traceback (most recent call last):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+main_pretrain_lomar.py FAILED
+-------------------------------------------------------
+Failures:
+[1]:
+  time      : 2022-09-29_22:38:19
+  host      : gpu213-18.ibex.kaust.edu.sa
+  rank      : 2 (local_rank: 2)
+  exitcode  : -6 (pid: 127899)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 127899
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2022-09-29_22:38:19
+  host      : gpu213-18.ibex.kaust.edu.sa
+  rank      : 1 (local_rank: 1)
+  exitcode  : -6 (pid: 127898)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 127898
+=======================================================
