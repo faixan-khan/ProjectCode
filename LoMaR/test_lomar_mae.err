@@ -1,4 +1,4 @@
-/opt/slurm/cluster/raven/spool/gpu109-16-r/slurmd/job198548/slurm_script: line 15: source: /home/khanff/miniconda3/envs/lomar: is a directory
+/opt/slurm/cluster/ibex/spool/gpu211-10/slurmd/job22425180/slurm_script: line 14: source: /home/khanff/miniconda3/envs/lomar: is a directory
 /home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
 and will be removed in future. Use torchrun.
 Note that --use_env is set by default in torchrun.
@@ -24,3 +24,40 @@ Setting OMP_NUM_THREADS environment variable for each process to be 1 in default
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 154354 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 154355 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 154356 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 154353) of binary: /home/khanff/miniconda3/envs/lomar/bin/python
+Traceback (most recent call last):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main_pretrain_lomar.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2022-10-14_20:06:35
+  host      : gpu211-10.ibex.kaust.edu.sa
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 154353)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

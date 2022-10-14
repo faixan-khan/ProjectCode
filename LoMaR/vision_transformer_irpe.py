@@ -36,6 +36,7 @@ from timm.models.registry import register_model
 
 # faizan's linear attention
 from fast_transformers.attention import LinearAttention
+from fast_transformers.attention import FullAttention
 from fast_transformers.masking import LengthMask, TriangularCausalMask, FullMask
 from fast_transformers.attention import AttentionLayer
 
@@ -120,7 +121,8 @@ class Attention(nn.Module):
         self.num_heads = num_heads
         head_dim = dim // num_heads
         # LINEAR ATEENTION CODE HERE
-        self.Linear_attention = LinearAttention(dim)
+        # self.Linear_attention = LinearAttention(dim)
+        self.Linear_attention = FullAttention()
         self.linear_attention = AttentionLayer(self.Linear_attention, dim, num_heads)
         # ///////////////////////// LINEAR ATTENTION ENDS HERE
         # NOTE scale factor was wrong in my original version, can set manually to be compat with prev weights

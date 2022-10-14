@@ -1,26 +1,25 @@
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH --partition=batch
-#SBATCH --mail-user=faizan.khan@kaust.edu.sa #Your Email address assigned for your job
-#SBATCH --mail-type=ALL #Receive an email for ALL Job Statuses
-#SBATCH -J lomar_nn
-#SBATCH --error=mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches.err #The .error file name
-#SBATCH --output=mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches.out #The .output file name
-#SBATCH --time=72:00:00 #Walltime: Duration for the Job to run HH:MM:SS
-#SBATCH --nodes=1 #Number of Nodes desired e.g 1 node
+#SBATCH --mem=250G # memory pool for all cores`
+#SBATCH --time 24:00:00 # time, specify max time allocation`
+#SBATCH --mail-type=END,FAIL # notifications for job done & fail`
+#SBATCH --mail-user=faizan.khan@kaust.edu.sa
 #SBATCH --gres=gpu:4
-#SBATCH --cpus-per-task=8
-#SBATCH --constraint=[v100]
-#SBATCH --mem=60G
+#SBATCH --cpus-per-gpu=6
+#SBATCH --job-name=mae_encoderonly_mask_0.8_neigh_0.05_wind_7_8100epoches_384
+#SBATCH --output=logs/mae_encoderonly_mask_0.8_neigh_0.05_wind_7_8100epoches_384
+#SBATCH --error=lomar_mae384.err #The .error file name
+#SBATCH --output=lomar_mae384.out #The .output file name
+#SBATCH --account conf-cvpr-2022.11.18-elhosemh
 
 python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
 --master_addr=127.0.0.1 --master_port=47144 main_pretrain_lomar.py \
-    --model mae_vit_base_patch16 \
-    --num_window 2 \
+    --model mae_vit_base_patch16_384 \
+    --num_window 4 \
     --batch_size 256 \
+    --input_size 384 \
     --accum_iter 4 \
-    --output_dir ./save/checkpoint/mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches \
-    --log_dir ./save/logs/mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches \
+    --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches_384 \
+    --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/mae_encoderonly_mask_0.8_neigh_0.05_wind_2_100epoches_384 \
     --norm_pix_loss \
     --distributed \
     --amp_autocast True \
