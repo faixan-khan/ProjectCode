@@ -229,7 +229,6 @@ class MaskedAutoencoderViT(nn.Module):
         
         # embed tokens
         x = self.decoder_embed(x)
-
         # append mask tokens to sequence
         mask_tokens = self.mask_token.repeat(x.shape[0], ids_restore.shape[1] + 1 - x.shape[1], 1)
         x_ = torch.cat([x[:, 1:, :], mask_tokens], dim=1)  # no cls token
@@ -272,7 +271,9 @@ class MaskedAutoencoderViT(nn.Module):
         loss = (loss * mask).sum() / mask.sum()  # mean loss on removed patches
         return loss
 
-    def forward(self, imgs, reconstruction_per_gaussian=3):
+    def forward(self, imgs, reconstruction_per_gaussian=3,num_gaussians=5, gaussian_size=6):
+        self.__num_gaussians = num_gaussians
+        self.__gaussian_size = gaussian_size
         latent, mask_ids_restore, ids_restore, mask = self.forward_encoder(imgs,
                                                     reconstruction_per_gaussian)
         pred = self.forward_decoder(latent, mask_ids_restore, ids_restore)  # [N, L, p*p*3]

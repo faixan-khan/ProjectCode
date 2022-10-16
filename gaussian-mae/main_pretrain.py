@@ -43,6 +43,11 @@ def get_args_parser():
     parser.add_argument('--accum_iter', default=1, type=int,
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
+    # Gaussian parameters
+    parser.add_argument('--reconstruction_per_gaussian', default=3, type=int)
+    parser.add_argument('--num_gaussians', default=5, type=int)
+    parser.add_argument('--gaussian_size', default=7, type=int)
+
     # Model parameters
     parser.add_argument('--model', default='mae_vit_large_patch16', type=str, metavar='MODEL',
                         help='Name of model to train')
