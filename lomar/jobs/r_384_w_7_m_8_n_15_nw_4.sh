@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --mem=250G # memory pool for all cores`
-#SBATCH --time 24:00:00 # time, specify max time allocation`
+#SBATCH --time 84:00:00 # time, specify max time allocation`
 #SBATCH --mail-type=END,FAIL # notifications for job done & fail`
 #SBATCH --mail-user=faizan.khan@kaust.edu.sa
 #SBATCH --gres=gpu:4

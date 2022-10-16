@@ -30,9 +30,9 @@ from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 from timm.models.resnet import resnet26d, resnet50d
 from timm.models.registry import register_model
 
-# from irpe import get_rpe_config
+from irpe import get_rpe_config
 
-# from irpe import build_rpe
+from irpe import build_rpe
 
 # faizan's linear attention
 from fast_transformers.attention import LinearAttention
@@ -40,14 +40,14 @@ from fast_transformers.attention import FullAttention
 from fast_transformers.masking import LengthMask, TriangularCausalMask, FullMask
 from fast_transformers.attention import AttentionLayer
 
-# rpe_config = get_rpe_config(
-#     ratio=1.9,
-#     method="product",
-#     mode='ctx',
-#     shared_head=True,
-#     skip=1,
-#     rpe_on='k',
-# )
+rpe_config = get_rpe_config(
+    ratio=1.9,
+    method="product",
+    mode='ctx',
+    shared_head=True,
+    skip=1,
+    rpe_on='k',
+)
 
 
 
@@ -124,6 +124,14 @@ class Attention(nn.Module):
         # self.Linear_attention = LinearAttention(dim)
         self.Linear_attention = FullAttention()
         self.linear_attention = AttentionLayer(self.Linear_attention, dim, num_heads)
+
+        self.query_projection = nn.Linear(dim, head_dim * num_heads)
+        self.key_projection = nn.Linear(dim, head_dim * num_heads)
+        self.value_projection = nn.Linear(dim, head_dim * num_heads)
+        self.out_projection = nn.Linear(head_dim * num_heads, dim)
+        self.feature_map = (lambda x: nn.functional.elu(x) + 1)
+        self.eps = 1e-6
+
         # ///////////////////////// LINEAR ATTENTION ENDS HERE
         # NOTE scale factor was wrong in my original version, can set manually to be compat with prev weights
         self.scale = qk_scale or head_dim ** -0.5
@@ -133,32 +141,50 @@ class Attention(nn.Module):
         self.proj = nn.Linear(dim, dim)
         self.proj_drop = nn.Dropout(proj_drop)
 
-        # self.rpe_q, self.rpe_k, self.rpe_v = \
-        # build_rpe(rpe_config,
-                #   head_dim=head_dim,
-                #   num_heads=num_heads)
+        self.rpe_q, self.rpe_k, self.rpe_v = \
+        build_rpe(rpe_config,
+                  head_dim=head_dim,
+                  num_heads=num_heads)
 
     def forward(self, x):
         # print(x.shape,'input')
         B, N, C = x.shape
-        # LINEAR ATEENTION CODE HERE
-        qkv = self.qkv(x).reshape(B, N, 3, C).permute(2,0,1,3)
-        q, k, v = qkv[0], qkv[1], qkv[2]
-        attn_mask = FullMask(C, device=x.device)
-        key_lengths = LengthMask(x.new_full((B,), N, dtype=torch.int64), device=x.device)
-        # print('The shape of attn_mask is: ',attn_mask.shape,', and the shape of key mask is: ', key_lengths.shape)
-        x = self.linear_attention(q, k, v, attn_mask, key_lengths, key_lengths) #key length is same as quesry length so can use same mask
+        # INBUILT LINEAR ATEENTION CODE HERE
+        # qkv = self.qkv(x).reshape(B, N, 3, C).permute(2,1,0,3)
+        # q, k, v = qkv[0], qkv[1], qkv[2]
+        # attn_mask = FullMask(C, device=x.device)
+        # key_lengths = LengthMask(x.new_full((B,), N, dtype=torch.int64), device=x.device)
+        # lin_attn = self.linear_attention(q, k, v, attn_mask, key_lengths, key_lengths) #key length is same as quesry length so can use same mask
+        # # print(lin_attn.shape)
         # print('this is the output shape of linear attention: ',x.shape)
         # ///////////////////////// LINEAR ATTENTION ENDS HERE
+        # ///////////////////////// MY LINEAR ATTENTION IMPLEMENTATION STARTS
+        qkv = self.qkv(x).reshape(B, N, 3, C).permute(2,1,0,3)
+        q, k, v = qkv[0], qkv[1], qkv[2]
+        H = self.num_heads
+        N, L, _ = q.shape
+        _, S, _ = k.shape
+        q = self.query_projection(q).view(N, L, H, -1)
+        k = self.key_projection(k).view(N, S, H, -1)
+        v = self.value_projection(v).view(N, S, H, -1)
+        # print(q.shape, k.shape, v.shape, 'shape after projection')
+        q = self.feature_map(q)
+        k = self.feature_map(k)
+        kv = torch.einsum("nshd,nshm->nhmd", k, v)
+        z = 1/(torch.einsum("nlhd,nhd->nlh", q, k.sum(dim=1))+self.eps)
+        lin_attn = torch.einsum("nlhd,nhmd,nlh->nlhm", q, kv, z)
+        lin_attn = lin_attn.reshape(N, L, -1)
+        # ///////////////////////// LINEAR ATTENTION IMPLEMENTATION ENDS
+        # LINEAR ATTENTION ENDS HERE
+        # B, N, C = x.shape
         # qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
         # q, k, v = qkv[0], qkv[1], qkv[2]   # make torchscript happy (cannot use tensor as tuple)
-        # print(q.shape, k.shape, v.shape, self.num_heads)
         # attn = (q @ k.transpose(-2, -1)) * self.scale
 
         # if self.rpe_k is not None:
             # attn += self.rpe_k(q)
 
-        # image relative position on queries
+        # # image relative position on queries
         # if self.rpe_q is not None:
             # attn += self.rpe_q(k * self.scale).transpose(2, 3)
 
@@ -167,14 +193,17 @@ class Attention(nn.Module):
         # attn = self.attn_drop(attn)
 
         # out = attn@v
-        # print(out.shape,'shape of quadratic attention')
+
         # if self.rpe_v is not None:
             # out += self.rpe_v(attn)
-        # print(out.shape, 'outout shape after most liekly same as above')
-
         # x = out.transpose(1, 2).reshape(B, N, C)
+        lin_attn = lin_attn.transpose(1, 2).reshape(B, N, C)
+        
+        # print(lin_attn.shape, x.shape,'OR THIS SHOULD BE SAME')
+        # exit()
+        x = lin_attn
         # print(x.shape,'176')
-        x = self.proj(x)
+        # x = self.proj(x)
         # print(x.shape,'178')
         x = self.proj_drop(x)
         # print(x.shape,'180')

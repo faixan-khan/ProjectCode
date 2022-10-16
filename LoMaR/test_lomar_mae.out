@@ -1,9 +1,9 @@
-| distributed init (rank 1): env://, gpu 1
-| distributed init (rank 3): env://, gpu 3
-| distributed init (rank 2): env://, gpu 2
 | distributed init (rank 0): env://, gpu 0
-[19:29:15.682598] job dir: /home/khanff/cvpr23/LoMaR
-[19:29:15.683187] Namespace(MASTER_ADDR='localhost',
+| distributed init (rank 3): env://, gpu 3
+| distributed init (rank 1): env://, gpu 1
+| distributed init (rank 2): env://, gpu 2
+[22:03:47.086886] job dir: /home/khanff/cvpr23/LoMaR
+[22:03:47.087171] Namespace(MASTER_ADDR='localhost',
 MASTER_PORT='10019',
 accum_iter=4,
 batch_size=256,
@@ -18,15 +18,15 @@ epochs=100,
 gpu=0,
 input_size=224,
 local_rank=0,
-log_dir='/ibex/ai/project/c2090/lomar_plus_save/logs/test_mae_encoderonly_mask_0.8_wind_7_100linear',
+log_dir='/ibex/ai/project/c2090/lomar_plus_save/logs/linear_mae_encoderonly_mask_0.8_wind_7_num_2_epochs_100',
 lr=None,
 mask_ratio=0.8,
 min_lr=0.0,
 model='mae_vit_base_patch16',
 norm_pix_loss=True,
-num_window=1,
+num_window=2,
 num_workers=10,
-output_dir='/ibex/ai/project/c2090/lomar_plus_save/checkpoint/test_mae_encoderonly_mask_0.8_wind_7_100linear',
+output_dir='/ibex/ai/project/c2090/lomar_plus_save/checkpoint/linear_mae_encoderonly_mask_0.8_wind_7_num_2_epochs_100',
 pin_mem=True,
 rank=0,
 resume='',
@@ -36,7 +36,7 @@ warmup_epochs=5,
 weight_decay=0.05,
 window_size=7,
 world_size=4)
-[19:29:37.148423] Dataset ImageFolder
+[22:04:06.618932] Dataset ImageFolder
     Number of datapoints: 1281167
     Root location: /ibex/ai/reference/CV/ILSVR/classification-localization/data/jpeg/train
     StandardTransform
@@ -46,8 +46,8 @@ Transform: Compose(
                ToTensor()
                Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
            )
-[19:29:37.149363] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x2abe0a135eb8>
-[19:29:38.662308] Model = MaskedAutoencoderViT(
+[22:04:06.619391] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x2baaf9442e80>
+[22:04:08.626898] Model = MaskedAutoencoderViT(
   (patch_embed): PatchEmbed(
     (proj): Conv2d(3, 768, kernel_size=(16, 16), stride=(16, 16))
   )
@@ -67,10 +67,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab8f137950>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -96,10 +101,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95ea1d08>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -125,10 +135,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95eb8158>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -154,10 +169,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95ecd510>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -183,10 +203,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95ee18c8>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -212,10 +237,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95ef5c80>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -241,10 +271,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f0b0d0>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -270,10 +305,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f21488>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -299,10 +339,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f33840>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -328,10 +373,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f47bf8>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -357,10 +407,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f5e048>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -386,10 +441,15 @@ Transform: Compose(
           (value_projection): Linear(in_features=768, out_features=768, bias=True)
           (out_projection): Linear(in_features=768, out_features=768, bias=True)
         )
+        (query_projection): Linear(in_features=768, out_features=768, bias=True)
+        (key_projection): Linear(in_features=768, out_features=768, bias=True)
+        (value_projection): Linear(in_features=768, out_features=768, bias=True)
+        (out_projection): Linear(in_features=768, out_features=768, bias=True)
         (qkv): Linear(in_features=768, out_features=2304, bias=True)
         (attn_drop): Dropout(p=0.0, inplace=False)
         (proj): Linear(in_features=768, out_features=768, bias=True)
         (proj_drop): Dropout(p=0.0, inplace=False)
+        (rpe_k): iRPE(head_dim=64, num_heads=1, mode="contextual", method=3, transposed=True, num_buckets=50, initializer=<function iRPE.__init__.<locals>.initializer at 0x2bab95f71400>, rpe_config={'shared_head': True, 'mode': 'contextual', 'method': 3, 'alpha': 1.9, 'beta': 3.8, 'gamma': 15.2, 'num_buckets': 50})
       )
       (drop_path): Identity()
       (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
@@ -404,13 +464,13 @@ Transform: Compose(
   (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
   (encoder_pred): Linear(in_features=768, out_features=768, bias=True)
 )
-[19:29:38.662382] base lr: 1.50e-04
-[19:29:38.662394] actual lr: 2.40e-03
-[19:29:38.662404] accumulate grad iterations: 4
-[19:29:38.662412] effective batch size: 4096
-[19:29:38.662419] True
-[19:29:38.662426] 0
-[19:29:38.695409] AdamW (
+[22:04:08.626983] base lr: 1.50e-04
+[22:04:08.627001] actual lr: 2.40e-03
+[22:04:08.627014] accumulate grad iterations: 4
+[22:04:08.627025] effective batch size: 4096
+[22:04:08.627037] True
+[22:04:08.627048] 0
+[22:04:08.663877] AdamW (
 Parameter Group 0
     amsgrad: False
     betas: (0.9, 0.95)
@@ -425,246 +485,6 @@ Parameter Group 1
     lr: 0.0024
     weight_decay: 0.05
 )
-[19:29:38.695522] Start training for 100 epochs
-[19:29:38.696432] log_dir: /ibex/ai/project/c2090/lomar_plus_save/logs/test_mae_encoderonly_mask_0.8_wind_7_100linear
-[19:29:50.119974] Epoch: [0]  [   0/1251]  eta: 3:58:08  lr: 0.000000  loss: 2.0688 (2.0688)  time: 11.4216  data: 6.2068  max mem: 7707
-[19:29:57.578570] Epoch: [0]  [  20/1251]  eta: 0:18:26  lr: 0.000008  loss: 2.0170 (1.9797)  time: 0.3729  data: 0.0006  max mem: 9043
-[19:30:05.356957] Epoch: [0]  [  40/1251]  eta: 0:13:07  lr: 0.000015  loss: 1.4755 (1.7431)  time: 0.3889  data: 0.0029  max mem: 9043
-[19:30:14.582200] Epoch: [0]  [  60/1251]  eta: 0:11:40  lr: 0.000023  loss: 1.2509 (1.5837)  time: 0.4612  data: 0.0517  max mem: 9043
-[19:30:24.367307] Epoch: [0]  [  80/1251]  eta: 0:11:00  lr: 0.000031  loss: 1.1236 (1.4704)  time: 0.4892  data: 0.0553  max mem: 9043
-[19:30:34.031564] Epoch: [0]  [ 100/1251]  eta: 0:10:30  lr: 0.000038  loss: 1.0584 (1.3891)  time: 0.4831  data: 0.0329  max mem: 9043
-[19:30:43.905965] Epoch: [0]  [ 120/1251]  eta: 0:10:09  lr: 0.000046  loss: 1.0196 (1.3283)  time: 0.4936  data: 0.0045  max mem: 9043
-[19:30:53.408057] Epoch: [0]  [ 140/1251]  eta: 0:09:48  lr: 0.000054  loss: 1.0006 (1.2818)  time: 0.4750  data: 0.0033  max mem: 9043
-[19:31:03.275907] Epoch: [0]  [ 160/1251]  eta: 0:09:33  lr: 0.000061  loss: 0.9810 (1.2445)  time: 0.4933  data: 0.0025  max mem: 9043
-[19:31:13.149410] Epoch: [0]  [ 180/1251]  eta: 0:09:18  lr: 0.000069  loss: 0.9581 (1.2129)  time: 0.4931  data: 0.0034  max mem: 9043
-[19:31:23.069447] Epoch: [0]  [ 200/1251]  eta: 0:09:05  lr: 0.000077  loss: 0.9277 (1.1844)  time: 0.4959  data: 0.0020  max mem: 9043
-[19:31:32.424619] Epoch: [0]  [ 220/1251]  eta: 0:08:50  lr: 0.000084  loss: 0.8994 (1.1587)  time: 0.4677  data: 0.0018  max mem: 9043
-[19:31:43.256442] Epoch: [0]  [ 240/1251]  eta: 0:08:42  lr: 0.000092  loss: 0.8759 (1.1352)  time: 0.5415  data: 0.0025  max mem: 9043
-[19:31:52.503416] Epoch: [0]  [ 260/1251]  eta: 0:08:27  lr: 0.000100  loss: 0.8542 (1.1140)  time: 0.4616  data: 0.0009  max mem: 9043
-[19:32:01.524275] Epoch: [0]  [ 280/1251]  eta: 0:08:13  lr: 0.000107  loss: 0.8345 (1.0941)  time: 0.4510  data: 0.0023  max mem: 9043
-[19:32:11.048359] Epoch: [0]  [ 300/1251]  eta: 0:08:01  lr: 0.000115  loss: 0.8288 (1.0763)  time: 0.4761  data: 0.0130  max mem: 9043
-[19:32:20.786362] Epoch: [0]  [ 320/1251]  eta: 0:07:49  lr: 0.000123  loss: 0.8216 (1.0603)  time: 0.4868  data: 0.0204  max mem: 9043
-[19:32:30.633215] Epoch: [0]  [ 340/1251]  eta: 0:07:39  lr: 0.000130  loss: 0.8102 (1.0459)  time: 0.4923  data: 0.0120  max mem: 9043
-[19:32:40.853623] Epoch: [0]  [ 360/1251]  eta: 0:07:29  lr: 0.000138  loss: 0.8134 (1.0328)  time: 0.5110  data: 0.0126  max mem: 9043
-[19:32:50.429820] Epoch: [0]  [ 380/1251]  eta: 0:07:18  lr: 0.000146  loss: 0.8151 (1.0211)  time: 0.4787  data: 0.0008  max mem: 9043
-[19:32:59.701301] Epoch: [0]  [ 400/1251]  eta: 0:07:06  lr: 0.000153  loss: 0.8057 (1.0103)  time: 0.4635  data: 0.0015  max mem: 9043
-[19:33:09.754298] Epoch: [0]  [ 420/1251]  eta: 0:06:56  lr: 0.000161  loss: 0.7918 (1.0000)  time: 0.5026  data: 0.0051  max mem: 9043
-[19:33:19.363666] Epoch: [0]  [ 440/1251]  eta: 0:06:45  lr: 0.000169  loss: 0.7904 (0.9908)  time: 0.4804  data: 0.0022  max mem: 9043
-[19:33:28.988662] Epoch: [0]  [ 460/1251]  eta: 0:06:35  lr: 0.000176  loss: 0.7897 (0.9823)  time: 0.4812  data: 0.0019  max mem: 9043
-[19:33:39.454319] Epoch: [0]  [ 480/1251]  eta: 0:06:25  lr: 0.000184  loss: 0.7941 (0.9745)  time: 0.5232  data: 0.0419  max mem: 9043
-[19:33:49.169122] Epoch: [0]  [ 500/1251]  eta: 0:06:15  lr: 0.000192  loss: 0.7920 (0.9670)  time: 0.4857  data: 0.0064  max mem: 9043
-[19:33:58.647768] Epoch: [0]  [ 520/1251]  eta: 0:06:04  lr: 0.000200  loss: 0.7933 (0.9603)  time: 0.4739  data: 0.0029  max mem: 9043
-[19:34:08.472824] Epoch: [0]  [ 540/1251]  eta: 0:05:54  lr: 0.000207  loss: 0.8085 (0.9546)  time: 0.4912  data: 0.0041  max mem: 9043
-[19:34:17.630151] Epoch: [0]  [ 560/1251]  eta: 0:05:43  lr: 0.000215  loss: 0.7872 (0.9488)  time: 0.4578  data: 0.0010  max mem: 9043
-[19:34:26.892859] Epoch: [0]  [ 580/1251]  eta: 0:05:32  lr: 0.000223  loss: 0.7945 (0.9436)  time: 0.4631  data: 0.0032  max mem: 9043
-[19:34:36.775293] Epoch: [0]  [ 600/1251]  eta: 0:05:22  lr: 0.000230  loss: 0.7875 (0.9384)  time: 0.4941  data: 0.0019  max mem: 9043
-[19:34:46.484274] Epoch: [0]  [ 620/1251]  eta: 0:05:12  lr: 0.000238  loss: 0.7910 (0.9337)  time: 0.4854  data: 0.0026  max mem: 9043
-[19:34:55.663024] Epoch: [0]  [ 640/1251]  eta: 0:05:02  lr: 0.000246  loss: 0.7927 (0.9293)  time: 0.4589  data: 0.0015  max mem: 9043
-[19:35:05.283284] Epoch: [0]  [ 660/1251]  eta: 0:04:51  lr: 0.000253  loss: 0.7903 (0.9251)  time: 0.4792  data: 0.0028  max mem: 9043
-[19:35:14.840878] Epoch: [0]  [ 680/1251]  eta: 0:04:41  lr: 0.000261  loss: 0.7763 (0.9208)  time: 0.4778  data: 0.0025  max mem: 9043
-[19:35:24.894616] Epoch: [0]  [ 700/1251]  eta: 0:04:32  lr: 0.000269  loss: 0.7722 (0.9166)  time: 0.5026  data: 0.0008  max mem: 9043
-[19:35:34.368736] Epoch: [0]  [ 720/1251]  eta: 0:04:21  lr: 0.000276  loss: 0.7824 (0.9130)  time: 0.4736  data: 0.0017  max mem: 9043
-[19:35:43.836366] Epoch: [0]  [ 740/1251]  eta: 0:04:11  lr: 0.000284  loss: 0.7754 (0.9094)  time: 0.4733  data: 0.0040  max mem: 9043
-[19:35:54.047529] Epoch: [0]  [ 760/1251]  eta: 0:04:02  lr: 0.000292  loss: 0.7612 (0.9054)  time: 0.5105  data: 0.0073  max mem: 9043
-[19:36:03.787500] Epoch: [0]  [ 780/1251]  eta: 0:03:52  lr: 0.000299  loss: 0.7575 (0.9015)  time: 0.4869  data: 0.0020  max mem: 9043
-[19:36:13.651526] Epoch: [0]  [ 800/1251]  eta: 0:03:42  lr: 0.000307  loss: 0.7511 (0.8977)  time: 0.4931  data: 0.0030  max mem: 9043
-[19:36:22.971931] Epoch: [0]  [ 820/1251]  eta: 0:03:32  lr: 0.000315  loss: 0.7557 (0.8944)  time: 0.4658  data: 0.0251  max mem: 9043
-[19:36:32.290814] Epoch: [0]  [ 840/1251]  eta: 0:03:22  lr: 0.000322  loss: 0.7477 (0.8909)  time: 0.4659  data: 0.0555  max mem: 9043
-[19:36:42.403100] Epoch: [0]  [ 860/1251]  eta: 0:03:12  lr: 0.000330  loss: 0.7476 (0.8876)  time: 0.5056  data: 0.1088  max mem: 9043
-[19:36:51.692809] Epoch: [0]  [ 880/1251]  eta: 0:03:02  lr: 0.000338  loss: 0.7397 (0.8843)  time: 0.4644  data: 0.0809  max mem: 9043
-[19:37:01.520962] Epoch: [0]  [ 900/1251]  eta: 0:02:52  lr: 0.000345  loss: 0.7492 (0.8814)  time: 0.4913  data: 0.0931  max mem: 9043
-[19:37:11.020173] Epoch: [0]  [ 920/1251]  eta: 0:02:42  lr: 0.000353  loss: 0.7725 (0.8791)  time: 0.4749  data: 0.0979  max mem: 9043
-[19:37:21.273158] Epoch: [0]  [ 940/1251]  eta: 0:02:32  lr: 0.000361  loss: 0.7632 (0.8765)  time: 0.5126  data: 0.1185  max mem: 9043
-[19:37:30.978720] Epoch: [0]  [ 960/1251]  eta: 0:02:22  lr: 0.000368  loss: 0.7562 (0.8741)  time: 0.4852  data: 0.0943  max mem: 9043
-[19:37:40.341147] Epoch: [0]  [ 980/1251]  eta: 0:02:13  lr: 0.000376  loss: 0.7573 (0.8717)  time: 0.4681  data: 0.0858  max mem: 9043
-[19:37:50.219268] Epoch: [0]  [1000/1251]  eta: 0:02:03  lr: 0.000384  loss: 0.7499 (0.8693)  time: 0.4938  data: 0.1057  max mem: 9043
-[19:37:59.898663] Epoch: [0]  [1020/1251]  eta: 0:01:53  lr: 0.000391  loss: 0.7513 (0.8670)  time: 0.4839  data: 0.1061  max mem: 9043
-[19:38:09.984127] Epoch: [0]  [1040/1251]  eta: 0:01:43  lr: 0.000399  loss: 0.7430 (0.8646)  time: 0.5042  data: 0.1112  max mem: 9043
-[19:38:19.260653] Epoch: [0]  [1060/1251]  eta: 0:01:33  lr: 0.000407  loss: 0.7432 (0.8623)  time: 0.4638  data: 0.0735  max mem: 9043
-[19:38:28.882274] Epoch: [0]  [1080/1251]  eta: 0:01:23  lr: 0.000414  loss: 0.7431 (0.8601)  time: 0.4810  data: 0.0948  max mem: 9043
-[19:38:38.444091] Epoch: [0]  [1100/1251]  eta: 0:01:14  lr: 0.000422  loss: 0.7396 (0.8579)  time: 0.4780  data: 0.0955  max mem: 9043
-[19:38:47.855410] Epoch: [0]  [1120/1251]  eta: 0:01:04  lr: 0.000430  loss: 0.7293 (0.8556)  time: 0.4705  data: 0.0843  max mem: 9043
-[19:38:57.275673] Epoch: [0]  [1140/1251]  eta: 0:00:54  lr: 0.000437  loss: 0.7521 (0.8537)  time: 0.4710  data: 0.0856  max mem: 9043
-[19:39:07.359423] Epoch: [0]  [1160/1251]  eta: 0:00:44  lr: 0.000445  loss: 0.7465 (0.8518)  time: 0.5026  data: 0.1155  max mem: 9043
-[19:39:16.696597] Epoch: [0]  [1180/1251]  eta: 0:00:34  lr: 0.000453  loss: 0.7376 (0.8498)  time: 0.4668  data: 0.0917  max mem: 9043
-[19:39:26.712531] Epoch: [0]  [1200/1251]  eta: 0:00:24  lr: 0.000460  loss: 0.7303 (0.8478)  time: 0.5007  data: 0.1060  max mem: 9043
-[19:39:36.815830] Epoch: [0]  [1220/1251]  eta: 0:00:15  lr: 0.000468  loss: 0.7380 (0.8459)  time: 0.5051  data: 0.1193  max mem: 9043
-[19:39:45.256241] Epoch: [0]  [1240/1251]  eta: 0:00:05  lr: 0.000476  loss: 0.7370 (0.8442)  time: 0.4219  data: 0.0685  max mem: 9043
-[19:39:48.160287] Epoch: [0]  [1250/1251]  eta: 0:00:00  lr: 0.000479  loss: 0.7244 (0.8432)  time: 0.3751  data: 0.0593  max mem: 9043
-[19:39:48.809359] Epoch: [0] Total time: 0:10:10 (0.4877 s / it)
-[19:39:48.810542] Averaged stats: lr: 0.000479  loss: 0.7244 (0.8432)
-[19:39:51.104859] log_dir: /ibex/ai/project/c2090/lomar_plus_save/logs/test_mae_encoderonly_mask_0.8_wind_7_100linear
-[19:39:57.514946] Epoch: [1]  [   0/1251]  eta: 2:12:47  lr: 0.000480  loss: 0.6922 (0.6922)  time: 6.3689  data: 5.9492  max mem: 9043
-[19:40:05.459598] Epoch: [1]  [  20/1251]  eta: 0:13:58  lr: 0.000488  loss: 0.7197 (0.7188)  time: 0.3972  data: 0.0016  max mem: 9043
-[19:40:14.259840] Epoch: [1]  [  40/1251]  eta: 0:11:22  lr: 0.000495  loss: 0.7221 (0.7195)  time: 0.4399  data: 0.0481  max mem: 9043
-[19:40:23.814938] Epoch: [1]  [  60/1251]  eta: 0:10:37  lr: 0.000503  loss: 0.7237 (0.7203)  time: 0.4777  data: 0.0781  max mem: 9043
-[19:40:33.652700] Epoch: [1]  [  80/1251]  eta: 0:10:14  lr: 0.000511  loss: 0.7227 (0.7217)  time: 0.4918  data: 0.0972  max mem: 9043
-[19:40:43.092473] Epoch: [1]  [ 100/1251]  eta: 0:09:51  lr: 0.000518  loss: 0.7131 (0.7207)  time: 0.4719  data: 0.0754  max mem: 9043
-[19:40:52.935587] Epoch: [1]  [ 120/1251]  eta: 0:09:37  lr: 0.000526  loss: 0.7039 (0.7186)  time: 0.4921  data: 0.0981  max mem: 9043
-[19:41:02.776294] Epoch: [1]  [ 140/1251]  eta: 0:09:24  lr: 0.000534  loss: 0.7126 (0.7174)  time: 0.4920  data: 0.1075  max mem: 9043
-[19:41:12.942941] Epoch: [1]  [ 160/1251]  eta: 0:09:14  lr: 0.000541  loss: 0.7102 (0.7166)  time: 0.5083  data: 0.1122  max mem: 9043
-[19:41:22.743973] Epoch: [1]  [ 180/1251]  eta: 0:09:01  lr: 0.000549  loss: 0.7068 (0.7152)  time: 0.4899  data: 0.1002  max mem: 9043
-[19:41:32.711592] Epoch: [1]  [ 200/1251]  eta: 0:08:50  lr: 0.000557  loss: 0.7123 (0.7149)  time: 0.4983  data: 0.1061  max mem: 9043
-[19:41:41.969923] Epoch: [1]  [ 220/1251]  eta: 0:08:36  lr: 0.000564  loss: 0.7043 (0.7142)  time: 0.4628  data: 0.0788  max mem: 9043
-[19:41:51.712790] Epoch: [1]  [ 240/1251]  eta: 0:08:25  lr: 0.000572  loss: 0.7125 (0.7143)  time: 0.4871  data: 0.0856  max mem: 9043
-[19:42:01.450726] Epoch: [1]  [ 260/1251]  eta: 0:08:14  lr: 0.000580  loss: 0.7129 (0.7145)  time: 0.4868  data: 0.0851  max mem: 9043
-[19:42:11.360197] Epoch: [1]  [ 280/1251]  eta: 0:08:04  lr: 0.000587  loss: 0.7120 (0.7138)  time: 0.4954  data: 0.1109  max mem: 9043
-[19:42:20.927179] Epoch: [1]  [ 300/1251]  eta: 0:07:53  lr: 0.000595  loss: 0.7050 (0.7134)  time: 0.4783  data: 0.0850  max mem: 9043
-[19:42:31.129824] Epoch: [1]  [ 320/1251]  eta: 0:07:43  lr: 0.000603  loss: 0.7020 (0.7127)  time: 0.5101  data: 0.1063  max mem: 9043
-[19:42:40.860297] Epoch: [1]  [ 340/1251]  eta: 0:07:33  lr: 0.000610  loss: 0.7087 (0.7125)  time: 0.4865  data: 0.1000  max mem: 9043
-[19:42:50.246046] Epoch: [1]  [ 360/1251]  eta: 0:07:21  lr: 0.000618  loss: 0.6916 (0.7113)  time: 0.4692  data: 0.0769  max mem: 9043
-[19:42:59.512168] Epoch: [1]  [ 380/1251]  eta: 0:07:10  lr: 0.000626  loss: 0.6960 (0.7105)  time: 0.4628  data: 0.0616  max mem: 9043
-[19:43:09.064099] Epoch: [1]  [ 400/1251]  eta: 0:06:59  lr: 0.000633  loss: 0.7018 (0.7099)  time: 0.4775  data: 0.0861  max mem: 9043
-[19:43:18.670529] Epoch: [1]  [ 420/1251]  eta: 0:06:49  lr: 0.000641  loss: 0.6974 (0.7094)  time: 0.4803  data: 0.0992  max mem: 9043
-[19:43:28.947391] Epoch: [1]  [ 440/1251]  eta: 0:06:40  lr: 0.000649  loss: 0.6963 (0.7088)  time: 0.5138  data: 0.1362  max mem: 9043
-[19:43:38.512599] Epoch: [1]  [ 460/1251]  eta: 0:06:30  lr: 0.000656  loss: 0.6933 (0.7081)  time: 0.4782  data: 0.0906  max mem: 9043
-[19:43:47.963845] Epoch: [1]  [ 480/1251]  eta: 0:06:19  lr: 0.000664  loss: 0.7343 (0.7094)  time: 0.4725  data: 0.0658  max mem: 9043
-[19:43:57.414924] Epoch: [1]  [ 500/1251]  eta: 0:06:09  lr: 0.000672  loss: 0.7363 (0.7104)  time: 0.4725  data: 0.0675  max mem: 9043
-[19:44:07.211054] Epoch: [1]  [ 520/1251]  eta: 0:05:59  lr: 0.000680  loss: 0.7275 (0.7111)  time: 0.4897  data: 0.0907  max mem: 9043
-[19:44:17.461873] Epoch: [1]  [ 540/1251]  eta: 0:05:49  lr: 0.000687  loss: 0.7136 (0.7111)  time: 0.5125  data: 0.1148  max mem: 9043
-[19:44:27.270837] Epoch: [1]  [ 560/1251]  eta: 0:05:40  lr: 0.000695  loss: 0.6973 (0.7108)  time: 0.4904  data: 0.0878  max mem: 9043
-[19:44:37.040058] Epoch: [1]  [ 580/1251]  eta: 0:05:30  lr: 0.000703  loss: 0.6734 (0.7098)  time: 0.4880  data: 0.0882  max mem: 9043
-[19:44:45.690872] Epoch: [1]  [ 600/1251]  eta: 0:05:18  lr: 0.000710  loss: 0.6920 (0.7091)  time: 0.4325  data: 0.0540  max mem: 9043
-[19:44:55.447123] Epoch: [1]  [ 620/1251]  eta: 0:05:09  lr: 0.000718  loss: 0.7033 (0.7089)  time: 0.4873  data: 0.1003  max mem: 9043
-[19:45:05.148173] Epoch: [1]  [ 640/1251]  eta: 0:04:59  lr: 0.000726  loss: 0.6993 (0.7085)  time: 0.4850  data: 0.0989  max mem: 9043
-[19:45:14.455890] Epoch: [1]  [ 660/1251]  eta: 0:04:49  lr: 0.000733  loss: 0.6925 (0.7080)  time: 0.4653  data: 0.0761  max mem: 9043
-[19:45:24.083490] Epoch: [1]  [ 680/1251]  eta: 0:04:39  lr: 0.000741  loss: 0.6649 (0.7068)  time: 0.4807  data: 0.0845  max mem: 9043
-[19:45:34.005711] Epoch: [1]  [ 700/1251]  eta: 0:04:29  lr: 0.000749  loss: 0.6711 (0.7058)  time: 0.4961  data: 0.0868  max mem: 9043
-[19:45:44.589358] Epoch: [1]  [ 720/1251]  eta: 0:04:20  lr: 0.000756  loss: 0.6910 (0.7054)  time: 0.5291  data: 0.1100  max mem: 9043
-[19:45:53.867096] Epoch: [1]  [ 740/1251]  eta: 0:04:10  lr: 0.000764  loss: 0.6808 (0.7048)  time: 0.4638  data: 0.0403  max mem: 9043
-[19:46:03.537936] Epoch: [1]  [ 760/1251]  eta: 0:04:00  lr: 0.000772  loss: 0.6693 (0.7038)  time: 0.4835  data: 0.0911  max mem: 9043
-[19:46:13.024262] Epoch: [1]  [ 780/1251]  eta: 0:03:50  lr: 0.000779  loss: 0.6697 (0.7030)  time: 0.4742  data: 0.0279  max mem: 9043
-[19:46:23.183475] Epoch: [1]  [ 800/1251]  eta: 0:03:40  lr: 0.000787  loss: 0.7023 (0.7031)  time: 0.5079  data: 0.0415  max mem: 9043
-[19:46:32.561985] Epoch: [1]  [ 820/1251]  eta: 0:03:30  lr: 0.000795  loss: 0.6995 (0.7031)  time: 0.4689  data: 0.0190  max mem: 9043
-[19:46:41.988813] Epoch: [1]  [ 840/1251]  eta: 0:03:20  lr: 0.000802  loss: 0.6965 (0.7029)  time: 0.4693  data: 0.0651  max mem: 9043
-[19:46:51.579073] Epoch: [1]  [ 860/1251]  eta: 0:03:10  lr: 0.000810  loss: 0.6832 (0.7024)  time: 0.4794  data: 0.0443  max mem: 9043
-[19:47:01.557133] Epoch: [1]  [ 880/1251]  eta: 0:03:01  lr: 0.000818  loss: 0.6775 (0.7018)  time: 0.4988  data: 0.0744  max mem: 9043
-[19:47:10.936920] Epoch: [1]  [ 900/1251]  eta: 0:02:51  lr: 0.000825  loss: 0.6806 (0.7014)  time: 0.4689  data: 0.0599  max mem: 9043
-[19:47:21.108741] Epoch: [1]  [ 920/1251]  eta: 0:02:41  lr: 0.000833  loss: 0.6730 (0.7006)  time: 0.5070  data: 0.1046  max mem: 9043
-[19:47:31.205843] Epoch: [1]  [ 940/1251]  eta: 0:02:31  lr: 0.000841  loss: 0.6678 (0.7000)  time: 0.5048  data: 0.1058  max mem: 9043
-[19:47:40.594727] Epoch: [1]  [ 960/1251]  eta: 0:02:22  lr: 0.000848  loss: 0.6699 (0.6993)  time: 0.4694  data: 0.0690  max mem: 9043
-[19:47:49.998599] Epoch: [1]  [ 980/1251]  eta: 0:02:12  lr: 0.000856  loss: 0.6874 (0.6990)  time: 0.4701  data: 0.0538  max mem: 9043
-[19:47:59.254946] Epoch: [1]  [1000/1251]  eta: 0:02:02  lr: 0.000864  loss: 0.6768 (0.6986)  time: 0.4612  data: 0.0482  max mem: 9043
-[19:48:08.893037] Epoch: [1]  [1020/1251]  eta: 0:01:52  lr: 0.000871  loss: 0.6672 (0.6980)  time: 0.4814  data: 0.0842  max mem: 9043
-[19:48:18.514081] Epoch: [1]  [1040/1251]  eta: 0:01:42  lr: 0.000879  loss: 0.6678 (0.6973)  time: 0.4810  data: 0.0585  max mem: 9043
-[19:48:28.045819] Epoch: [1]  [1060/1251]  eta: 0:01:33  lr: 0.000887  loss: 0.6975 (0.6973)  time: 0.4765  data: 0.0383  max mem: 9043
-[19:48:38.023162] Epoch: [1]  [1080/1251]  eta: 0:01:23  lr: 0.000894  loss: 0.6838 (0.6970)  time: 0.4988  data: 0.0857  max mem: 9043
-[19:48:47.627525] Epoch: [1]  [1100/1251]  eta: 0:01:13  lr: 0.000902  loss: 0.6792 (0.6967)  time: 0.4801  data: 0.0437  max mem: 9043
-[19:48:57.379260] Epoch: [1]  [1120/1251]  eta: 0:01:03  lr: 0.000910  loss: 0.6773 (0.6963)  time: 0.4875  data: 0.0021  max mem: 9043
-[19:49:06.746077] Epoch: [1]  [1140/1251]  eta: 0:00:54  lr: 0.000917  loss: 0.6774 (0.6960)  time: 0.4683  data: 0.0030  max mem: 9043
-[19:49:16.713004] Epoch: [1]  [1160/1251]  eta: 0:00:44  lr: 0.000925  loss: 0.6643 (0.6954)  time: 0.4983  data: 0.0084  max mem: 9043
-[19:49:25.977986] Epoch: [1]  [1180/1251]  eta: 0:00:34  lr: 0.000933  loss: 0.6564 (0.6948)  time: 0.4632  data: 0.0071  max mem: 9043
-[19:49:36.038729] Epoch: [1]  [1200/1251]  eta: 0:00:24  lr: 0.000940  loss: 0.6611 (0.6943)  time: 0.5030  data: 0.0153  max mem: 9043
-[19:49:45.885236] Epoch: [1]  [1220/1251]  eta: 0:00:15  lr: 0.000948  loss: 0.6696 (0.6940)  time: 0.4923  data: 0.0013  max mem: 9043
-[19:49:54.945441] Epoch: [1]  [1240/1251]  eta: 0:00:05  lr: 0.000956  loss: 0.6707 (0.6937)  time: 0.4529  data: 0.0418  max mem: 9043
-[19:49:57.863324] Epoch: [1]  [1250/1251]  eta: 0:00:00  lr: 0.000959  loss: 0.6616 (0.6934)  time: 0.3770  data: 0.0415  max mem: 9043
-[19:49:58.472214] Epoch: [1] Total time: 0:10:07 (0.4855 s / it)
-[19:49:58.478694] Averaged stats: lr: 0.000959  loss: 0.6616 (0.6934)
-[19:49:58.485769] log_dir: /ibex/ai/project/c2090/lomar_plus_save/logs/test_mae_encoderonly_mask_0.8_wind_7_100linear
-[19:50:05.395792] Epoch: [2]  [   0/1251]  eta: 2:24:03  lr: 0.000960  loss: 0.6720 (0.6720)  time: 6.9089  data: 6.4633  max mem: 9043
-[19:50:14.820417] Epoch: [2]  [  20/1251]  eta: 0:15:57  lr: 0.000968  loss: 0.6573 (0.6577)  time: 0.4712  data: 0.0559  max mem: 9043
-[19:50:24.379180] Epoch: [2]  [  40/1251]  eta: 0:12:44  lr: 0.000975  loss: 0.6546 (0.6552)  time: 0.4777  data: 0.0461  max mem: 9043
-[19:50:34.019053] Epoch: [2]  [  60/1251]  eta: 0:11:33  lr: 0.000983  loss: 0.6688 (0.6600)  time: 0.4816  data: 0.0393  max mem: 9043
-[19:50:44.053350] Epoch: [2]  [  80/1251]  eta: 0:10:58  lr: 0.000991  loss: 0.6666 (0.6599)  time: 0.5016  data: 0.1166  max mem: 9043
-[19:50:53.737193] Epoch: [2]  [ 100/1251]  eta: 0:10:29  lr: 0.000998  loss: 0.6561 (0.6598)  time: 0.4835  data: 0.0835  max mem: 9043
-[19:51:03.592673] Epoch: [2]  [ 120/1251]  eta: 0:10:08  lr: 0.001006  loss: 0.6630 (0.6605)  time: 0.4927  data: 0.0761  max mem: 9043
-[19:51:13.470376] Epoch: [2]  [ 140/1251]  eta: 0:09:50  lr: 0.001014  loss: 0.6977 (0.6646)  time: 0.4938  data: 0.0543  max mem: 9043
-[19:51:22.491709] Epoch: [2]  [ 160/1251]  eta: 0:09:29  lr: 0.001021  loss: 0.6855 (0.6679)  time: 0.4510  data: 0.0342  max mem: 9043
-[19:51:32.471312] Epoch: [2]  [ 180/1251]  eta: 0:09:15  lr: 0.001029  loss: 0.6803 (0.6693)  time: 0.4989  data: 0.1044  max mem: 9043
-[19:51:42.539997] Epoch: [2]  [ 200/1251]  eta: 0:09:03  lr: 0.001037  loss: 0.6705 (0.6691)  time: 0.5034  data: 0.0581  max mem: 9043
-[19:51:52.490917] Epoch: [2]  [ 220/1251]  eta: 0:08:51  lr: 0.001044  loss: 0.6661 (0.6688)  time: 0.4975  data: 0.0040  max mem: 9043
-[19:52:01.985686] Epoch: [2]  [ 240/1251]  eta: 0:08:37  lr: 0.001052  loss: 0.6465 (0.6673)  time: 0.4747  data: 0.0015  max mem: 9043
-[19:52:11.250224] Epoch: [2]  [ 260/1251]  eta: 0:08:23  lr: 0.001060  loss: 0.6644 (0.6671)  time: 0.4632  data: 0.0450  max mem: 9043
-[19:52:20.737749] Epoch: [2]  [ 280/1251]  eta: 0:08:11  lr: 0.001067  loss: 0.6556 (0.6662)  time: 0.4743  data: 0.0399  max mem: 9043
-[19:52:30.410379] Epoch: [2]  [ 300/1251]  eta: 0:07:59  lr: 0.001075  loss: 0.6527 (0.6655)  time: 0.4836  data: 0.0653  max mem: 9043
-[19:52:40.446271] Epoch: [2]  [ 320/1251]  eta: 0:07:49  lr: 0.001083  loss: 0.6648 (0.6656)  time: 0.5017  data: 0.0575  max mem: 9043
-[19:52:49.765709] Epoch: [2]  [ 340/1251]  eta: 0:07:37  lr: 0.001090  loss: 0.6575 (0.6652)  time: 0.4655  data: 0.0130  max mem: 9043
-[19:52:59.596093] Epoch: [2]  [ 360/1251]  eta: 0:07:26  lr: 0.001098  loss: 0.6630 (0.6649)  time: 0.4914  data: 0.0465  max mem: 9043
-[19:53:09.152085] Epoch: [2]  [ 380/1251]  eta: 0:07:15  lr: 0.001106  loss: 0.6523 (0.6643)  time: 0.4777  data: 0.0035  max mem: 9043
-[19:53:19.412439] Epoch: [2]  [ 400/1251]  eta: 0:07:06  lr: 0.001113  loss: 0.6651 (0.6640)  time: 0.5123  data: 0.0038  max mem: 9043
-[19:53:29.107143] Epoch: [2]  [ 420/1251]  eta: 0:06:55  lr: 0.001121  loss: 0.6530 (0.6637)  time: 0.4847  data: 0.0100  max mem: 9043
-[19:53:38.200372] Epoch: [2]  [ 440/1251]  eta: 0:06:43  lr: 0.001129  loss: 0.6510 (0.6632)  time: 0.4546  data: 0.0011  max mem: 9043
-[19:53:47.797354] Epoch: [2]  [ 460/1251]  eta: 0:06:33  lr: 0.001136  loss: 0.6524 (0.6629)  time: 0.4798  data: 0.0677  max mem: 9043
-[19:53:57.516252] Epoch: [2]  [ 480/1251]  eta: 0:06:23  lr: 0.001144  loss: 0.6567 (0.6628)  time: 0.4854  data: 0.0826  max mem: 9043
-[19:54:07.363270] Epoch: [2]  [ 500/1251]  eta: 0:06:12  lr: 0.001152  loss: 0.6574 (0.6626)  time: 0.4923  data: 0.0771  max mem: 9043
-[19:54:16.839389] Epoch: [2]  [ 520/1251]  eta: 0:06:02  lr: 0.001160  loss: 0.6471 (0.6621)  time: 0.4737  data: 0.0268  max mem: 9043
-[19:54:26.066841] Epoch: [2]  [ 540/1251]  eta: 0:05:51  lr: 0.001167  loss: 0.6674 (0.6623)  time: 0.4613  data: 0.0575  max mem: 9043
-[19:54:36.015905] Epoch: [2]  [ 560/1251]  eta: 0:05:41  lr: 0.001175  loss: 0.6645 (0.6624)  time: 0.4970  data: 0.0848  max mem: 9043
-[19:54:45.449586] Epoch: [2]  [ 580/1251]  eta: 0:05:31  lr: 0.001183  loss: 0.6590 (0.6623)  time: 0.4716  data: 0.0731  max mem: 9043
-[19:54:55.257905] Epoch: [2]  [ 600/1251]  eta: 0:05:21  lr: 0.001190  loss: 0.6623 (0.6623)  time: 0.4903  data: 0.0592  max mem: 9043
-[19:55:05.399255] Epoch: [2]  [ 620/1251]  eta: 0:05:11  lr: 0.001198  loss: 0.6649 (0.6625)  time: 0.5070  data: 0.0731  max mem: 9043
-[19:55:15.254725] Epoch: [2]  [ 640/1251]  eta: 0:05:01  lr: 0.001206  loss: 0.6703 (0.6628)  time: 0.4927  data: 0.0860  max mem: 9043
-[19:55:24.917977] Epoch: [2]  [ 660/1251]  eta: 0:04:51  lr: 0.001213  loss: 0.6620 (0.6627)  time: 0.4831  data: 0.0939  max mem: 9043
-[19:55:34.641774] Epoch: [2]  [ 680/1251]  eta: 0:04:41  lr: 0.001221  loss: 0.6570 (0.6624)  time: 0.4861  data: 0.0808  max mem: 9043
-[19:55:43.933372] Epoch: [2]  [ 700/1251]  eta: 0:04:31  lr: 0.001229  loss: 0.6493 (0.6622)  time: 0.4645  data: 0.0382  max mem: 9043
-[19:55:53.247348] Epoch: [2]  [ 720/1251]  eta: 0:04:21  lr: 0.001236  loss: 0.6505 (0.6619)  time: 0.4656  data: 0.0391  max mem: 9043
-[19:56:03.084707] Epoch: [2]  [ 740/1251]  eta: 0:04:11  lr: 0.001244  loss: 0.6543 (0.6616)  time: 0.4918  data: 0.0016  max mem: 9043
-[19:56:12.777811] Epoch: [2]  [ 760/1251]  eta: 0:04:01  lr: 0.001252  loss: 0.6733 (0.6618)  time: 0.4846  data: 0.0479  max mem: 9043
-[19:56:22.570235] Epoch: [2]  [ 780/1251]  eta: 0:03:51  lr: 0.001259  loss: 0.6836 (0.6624)  time: 0.4896  data: 0.0137  max mem: 9043
-[19:56:32.070828] Epoch: [2]  [ 800/1251]  eta: 0:03:41  lr: 0.001267  loss: 0.6529 (0.6624)  time: 0.4750  data: 0.0010  max mem: 9043
-[19:56:41.617185] Epoch: [2]  [ 820/1251]  eta: 0:03:31  lr: 0.001275  loss: 0.6640 (0.6625)  time: 0.4768  data: 0.0041  max mem: 9043
-[19:56:51.667859] Epoch: [2]  [ 840/1251]  eta: 0:03:21  lr: 0.001282  loss: 0.6634 (0.6626)  time: 0.5025  data: 0.0150  max mem: 9043
-[19:57:01.230885] Epoch: [2]  [ 860/1251]  eta: 0:03:11  lr: 0.001290  loss: 0.6637 (0.6626)  time: 0.4781  data: 0.0527  max mem: 9043
-[19:57:11.490611] Epoch: [2]  [ 880/1251]  eta: 0:03:02  lr: 0.001298  loss: 0.6516 (0.6624)  time: 0.5129  data: 0.1023  max mem: 9043
-[19:57:21.062915] Epoch: [2]  [ 900/1251]  eta: 0:02:52  lr: 0.001305  loss: 0.6476 (0.6621)  time: 0.4786  data: 0.0886  max mem: 9043
-[19:57:30.353222] Epoch: [2]  [ 920/1251]  eta: 0:02:42  lr: 0.001313  loss: 0.6694 (0.6622)  time: 0.4645  data: 0.0628  max mem: 9043
-[19:57:40.195614] Epoch: [2]  [ 940/1251]  eta: 0:02:32  lr: 0.001321  loss: 0.6670 (0.6623)  time: 0.4921  data: 0.0693  max mem: 9043
-[19:57:49.362492] Epoch: [2]  [ 960/1251]  eta: 0:02:22  lr: 0.001328  loss: 0.6631 (0.6622)  time: 0.4583  data: 0.0275  max mem: 9043
-[19:57:59.036387] Epoch: [2]  [ 980/1251]  eta: 0:02:12  lr: 0.001336  loss: 0.6557 (0.6621)  time: 0.4836  data: 0.0211  max mem: 9043
-[19:58:08.402364] Epoch: [2]  [1000/1251]  eta: 0:02:02  lr: 0.001344  loss: 0.6521 (0.6618)  time: 0.4682  data: 0.0337  max mem: 9043
-[19:58:17.874680] Epoch: [2]  [1020/1251]  eta: 0:01:52  lr: 0.001351  loss: 0.6594 (0.6617)  time: 0.4736  data: 0.0021  max mem: 9043
-[19:58:27.652493] Epoch: [2]  [1040/1251]  eta: 0:01:43  lr: 0.001359  loss: 0.6547 (0.6616)  time: 0.4888  data: 0.0034  max mem: 9043
-[19:58:37.131942] Epoch: [2]  [1060/1251]  eta: 0:01:33  lr: 0.001367  loss: 0.6643 (0.6617)  time: 0.4739  data: 0.0013  max mem: 9043
-[19:58:46.883139] Epoch: [2]  [1080/1251]  eta: 0:01:23  lr: 0.001374  loss: 0.6530 (0.6616)  time: 0.4875  data: 0.0069  max mem: 9043
-[19:58:56.346116] Epoch: [2]  [1100/1251]  eta: 0:01:13  lr: 0.001382  loss: 0.6529 (0.6614)  time: 0.4731  data: 0.0057  max mem: 9043
-[19:59:06.250925] Epoch: [2]  [1120/1251]  eta: 0:01:03  lr: 0.001390  loss: 0.6450 (0.6612)  time: 0.4952  data: 0.0026  max mem: 9043
-[19:59:16.210129] Epoch: [2]  [1140/1251]  eta: 0:00:54  lr: 0.001397  loss: 0.6424 (0.6609)  time: 0.4979  data: 0.0044  max mem: 9043
-[19:59:26.415692] Epoch: [2]  [1160/1251]  eta: 0:00:44  lr: 0.001405  loss: 0.6365 (0.6605)  time: 0.5102  data: 0.0262  max mem: 9043
-[19:59:35.973260] Epoch: [2]  [1180/1251]  eta: 0:00:34  lr: 0.001413  loss: 0.6533 (0.6605)  time: 0.4778  data: 0.0703  max mem: 9043
-[19:59:45.683047] Epoch: [2]  [1200/1251]  eta: 0:00:24  lr: 0.001420  loss: 0.6562 (0.6604)  time: 0.4854  data: 0.0809  max mem: 9043
-[19:59:54.983573] Epoch: [2]  [1220/1251]  eta: 0:00:15  lr: 0.001428  loss: 0.6576 (0.6603)  time: 0.4649  data: 0.0693  max mem: 9043
-[20:00:03.773097] Epoch: [2]  [1240/1251]  eta: 0:00:05  lr: 0.001436  loss: 0.6478 (0.6601)  time: 0.4394  data: 0.0243  max mem: 9043
-[20:00:06.783220] Epoch: [2]  [1250/1251]  eta: 0:00:00  lr: 0.001439  loss: 0.6569 (0.6601)  time: 0.3405  data: 0.0014  max mem: 9043
-[20:00:07.411185] Epoch: [2] Total time: 0:10:08 (0.4868 s / it)
-[20:00:07.411863] Averaged stats: lr: 0.001439  loss: 0.6569 (0.6603)
-[20:00:07.421143] log_dir: /ibex/ai/project/c2090/lomar_plus_save/logs/test_mae_encoderonly_mask_0.8_wind_7_100linear
-[20:00:14.391359] Epoch: [3]  [   0/1251]  eta: 2:25:18  lr: 0.001440  loss: 0.6739 (0.6739)  time: 6.9692  data: 6.5545  max mem: 9043
-[20:00:23.805291] Epoch: [3]  [  20/1251]  eta: 0:16:00  lr: 0.001448  loss: 0.6743 (0.6700)  time: 0.4706  data: 0.0098  max mem: 9043
-[20:00:33.597688] Epoch: [3]  [  40/1251]  eta: 0:12:53  lr: 0.001455  loss: 0.6687 (0.6673)  time: 0.4895  data: 0.0247  max mem: 9043
-[20:00:43.460552] Epoch: [3]  [  60/1251]  eta: 0:11:43  lr: 0.001463  loss: 0.6558 (0.6660)  time: 0.4931  data: 0.0092  max mem: 9043
-[20:00:53.226421] Epoch: [3]  [  80/1251]  eta: 0:11:02  lr: 0.001471  loss: 0.6620 (0.6646)  time: 0.4882  data: 0.0044  max mem: 9043
-[20:01:02.251155] Epoch: [3]  [ 100/1251]  eta: 0:10:24  lr: 0.001478  loss: 0.6725 (0.6657)  time: 0.4512  data: 0.0020  max mem: 9043
-[20:01:12.291597] Epoch: [3]  [ 120/1251]  eta: 0:10:06  lr: 0.001486  loss: 0.6604 (0.6654)  time: 0.5020  data: 0.0013  max mem: 9043
-[20:01:22.121609] Epoch: [3]  [ 140/1251]  eta: 0:09:48  lr: 0.001494  loss: 0.6745 (0.6666)  time: 0.4914  data: 0.0009  max mem: 9043
-[20:01:31.647900] Epoch: [3]  [ 160/1251]  eta: 0:09:30  lr: 0.001501  loss: 0.6717 (0.6671)  time: 0.4762  data: 0.0015  max mem: 9043
-[20:01:41.106742] Epoch: [3]  [ 180/1251]  eta: 0:09:14  lr: 0.001509  loss: 0.6519 (0.6657)  time: 0.4729  data: 0.0013  max mem: 9043
-[20:01:50.736980] Epoch: [3]  [ 200/1251]  eta: 0:09:00  lr: 0.001517  loss: 0.6565 (0.6652)  time: 0.4814  data: 0.0036  max mem: 9043
-[20:02:00.240569] Epoch: [3]  [ 220/1251]  eta: 0:08:46  lr: 0.001524  loss: 0.6683 (0.6655)  time: 0.4751  data: 0.0035  max mem: 9043
-[20:02:09.654140] Epoch: [3]  [ 240/1251]  eta: 0:08:32  lr: 0.001532  loss: 0.6676 (0.6653)  time: 0.4706  data: 0.0025  max mem: 9043
-[20:02:19.519292] Epoch: [3]  [ 260/1251]  eta: 0:08:21  lr: 0.001540  loss: 0.6653 (0.6652)  time: 0.4932  data: 0.0033  max mem: 9043
-[20:02:29.664790] Epoch: [3]  [ 280/1251]  eta: 0:08:11  lr: 0.001547  loss: 0.6640 (0.6652)  time: 0.5072  data: 0.0134  max mem: 9043
-[20:02:38.895928] Epoch: [3]  [ 300/1251]  eta: 0:07:58  lr: 0.001555  loss: 0.6692 (0.6654)  time: 0.4615  data: 0.0167  max mem: 9043
-[20:02:48.727224] Epoch: [3]  [ 320/1251]  eta: 0:07:47  lr: 0.001563  loss: 0.6780 (0.6663)  time: 0.4915  data: 0.0057  max mem: 9043
-[20:02:58.341097] Epoch: [3]  [ 340/1251]  eta: 0:07:36  lr: 0.001570  loss: 0.6770 (0.6670)  time: 0.4806  data: 0.0014  max mem: 9043
-[20:03:07.593087] Epoch: [3]  [ 360/1251]  eta: 0:07:24  lr: 0.001578  loss: 0.6781 (0.6675)  time: 0.4625  data: 0.0033  max mem: 9043
-[20:03:18.334358] Epoch: [3]  [ 380/1251]  eta: 0:07:16  lr: 0.001586  loss: 0.6734 (0.6678)  time: 0.5370  data: 0.0013  max mem: 9043
-[20:03:27.693235] Epoch: [3]  [ 400/1251]  eta: 0:07:04  lr: 0.001593  loss: 0.6756 (0.6682)  time: 0.4679  data: 0.0010  max mem: 9043
-[20:03:37.311298] Epoch: [3]  [ 420/1251]  eta: 0:06:54  lr: 0.001601  loss: 0.6940 (0.6695)  time: 0.4808  data: 0.0044  max mem: 9043
-[20:03:47.241878] Epoch: [3]  [ 440/1251]  eta: 0:06:44  lr: 0.001609  loss: 0.6925 (0.6703)  time: 0.4965  data: 0.0028  max mem: 9043
-[20:03:57.006163] Epoch: [3]  [ 460/1251]  eta: 0:06:33  lr: 0.001616  loss: 0.8493 (0.6773)  time: 0.4882  data: 0.0033  max mem: 9043
-[20:04:06.852721] Epoch: [3]  [ 480/1251]  eta: 0:06:23  lr: 0.001624  loss: 0.8422 (0.6869)  time: 0.4923  data: 0.0052  max mem: 9043
-[20:04:17.070096] Epoch: [3]  [ 500/1251]  eta: 0:06:14  lr: 0.001632  loss: 0.9070 (0.6957)  time: 0.5108  data: 0.0012  max mem: 9043
-[20:04:26.250860] Epoch: [3]  [ 520/1251]  eta: 0:06:03  lr: 0.001640  loss: 0.8684 (0.7025)  time: 0.4590  data: 0.0015  max mem: 9043
-[20:04:35.911919] Epoch: [3]  [ 540/1251]  eta: 0:05:52  lr: 0.001647  loss: 0.8491 (0.7079)  time: 0.4830  data: 0.0028  max mem: 9043
-[20:04:45.351948] Epoch: [3]  [ 560/1251]  eta: 0:05:42  lr: 0.001655  loss: 0.8579 (0.7136)  time: 0.4719  data: 0.0033  max mem: 9043
-[20:04:55.458007] Epoch: [3]  [ 580/1251]  eta: 0:05:32  lr: 0.001663  loss: 0.8685 (0.7190)  time: 0.5052  data: 0.0016  max mem: 9043
-[20:05:04.966090] Epoch: [3]  [ 600/1251]  eta: 0:05:22  lr: 0.001670  loss: 0.8557 (0.7237)  time: 0.4753  data: 0.0015  max mem: 9043
-[20:05:15.126240] Epoch: [3]  [ 620/1251]  eta: 0:05:12  lr: 0.001678  loss: 0.8511 (0.7277)  time: 0.5079  data: 0.0026  max mem: 9043
-[20:05:24.988215] Epoch: [3]  [ 640/1251]  eta: 0:05:02  lr: 0.001686  loss: 0.8493 (0.7314)  time: 0.4930  data: 0.0013  max mem: 9043
-[20:05:34.364829] Epoch: [3]  [ 660/1251]  eta: 0:04:52  lr: 0.001693  loss: 0.8480 (0.7348)  time: 0.4688  data: 0.0015  max mem: 9043
-[20:05:44.043638] Epoch: [3]  [ 680/1251]  eta: 0:04:42  lr: 0.001701  loss: 0.8566 (0.7384)  time: 0.4839  data: 0.0012  max mem: 9043
-[20:05:53.762635] Epoch: [3]  [ 700/1251]  eta: 0:04:32  lr: 0.001709  loss: 0.8593 (0.7420)  time: 0.4859  data: 0.0017  max mem: 9043
-[20:06:03.345080] Epoch: [3]  [ 720/1251]  eta: 0:04:22  lr: 0.001716  loss: 0.9008 (0.7468)  time: 0.4790  data: 0.0011  max mem: 9043
-[20:06:13.077665] Epoch: [3]  [ 740/1251]  eta: 0:04:12  lr: 0.001724  loss: 0.9105 (0.7512)  time: 0.4865  data: 0.0029  max mem: 9043
-[20:06:22.445918] Epoch: [3]  [ 760/1251]  eta: 0:04:01  lr: 0.001732  loss: 0.8907 (0.7548)  time: 0.4678  data: 0.0074  max mem: 9043
-[20:06:27.936194] Loss is nan, stopping training
+[22:04:08.664021] Start training for 100 epochs
+[22:04:08.665218] log_dir: /ibex/ai/project/c2090/lomar_plus_save/logs/linear_mae_encoderonly_mask_0.8_wind_7_num_2_epochs_100
+[22:04:19.251495] Loss is nan, stopping training
