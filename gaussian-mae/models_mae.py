@@ -196,6 +196,15 @@ class MaskedAutoencoderViT(nn.Module):
         means_mask = torch.gather(means_mask, dim=1, index=ids_restore)
         assert (mask*means_mask).sum() == 0
 
+        # --------------------------------------------------------------------------
+        # Uncomment below for debugging
+        # --------------------------------------------------------------------------
+        # mask_res = means_mask+mask*3
+        # print("for Img 1")
+        # print(mask_res[0,:].reshape(h,-1))
+        # print("for Img 2")
+        # print(mask_res[1,:].reshape(h,-1))
+
         return x_masked, mask_ids_restore, ids_restore, mask                                                  
 
     def forward_encoder(self, x, reconstruction_per_gaussian):
