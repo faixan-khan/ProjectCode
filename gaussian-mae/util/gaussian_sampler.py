@@ -118,17 +118,25 @@ def mean_generation(window_size, N, n_gaussian, max_dims):
     # We generate the means  in such way to make sure the means do not duplicate
     # for a single image
     # --------------------------------------------------------------------------
-    p_h = (torch.randperm(max_h-min_h)+min_h).expand((N,-1))
-    p_w = (torch.randperm(max_w-min_w)+min_w).expand((N,-1))
+    mean_indx = torch.randperm(patches_h*patches_w).expand((N,-1))
+    # p_h = (torch.randperm(max_h-min_h)+min_h).expand((N,-1))
+    # p_w = (torch.randperm(max_w-min_w)+min_w).expand((N,-1))
 
-    noise_h = torch.rand(p_h.shape)
-    noise_w = torch.rand(p_w.shape)
+    noise = torch.rand(mean_indx.shape)
 
-    ids_h_shuffle = torch.argsort(noise_h, dim=1)
-    ids_w_shuffle = torch.argsort(noise_w, dim=1)
+    # noise_h = torch.rand(p_h.shape)
+    # noise_w = torch.rand(p_w.shape)
 
-    m_h = torch.gather(p_h, dim=1, index=ids_h_shuffle)[:,:n_gaussian]
-    m_w = torch.gather(p_w, dim=1, index=ids_w_shuffle)[:,:n_gaussian]
+    ids_shuffle = torch.argsort(noise, dim=1)
+    # ids_h_shuffle = torch.argsort(noise_h, dim=1)
+    # ids_w_shuffle = torch.argsort(noise_w, dim=1)
+
+    mean_indices = torch.gather(mean_indx, dim=1, index=ids_shuffle)[:,:n_gaussian]
+
+    m_h = torch.div(mean_indices,patches_w,rounding_mode='floor')
+    m_w = torch.remainder(mean_indices,patches_w)
+    # m_h = torch.gather(p_h, dim=1, index=ids_h_shuffle)[:,:n_gaussian]
+    # m_w = torch.gather(p_w, dim=1, index=ids_w_shuffle)[:,:n_gaussian]
 
     # ==========================================================================
     # make sure the shapes are correct
