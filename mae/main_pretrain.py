@@ -44,7 +44,7 @@ def get_args_parser():
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
     # Model parameters
-    parser.add_argument('--model', default='mae_vit_base_patch16', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='mae_vit_large_patch16', type=str, metavar='MODEL',
                         help='Name of model to train')
 
     parser.add_argument('--input_size', default=224, type=int,
@@ -55,10 +55,6 @@ def get_args_parser():
 
     parser.add_argument('--norm_pix_loss', action='store_true',
                         help='Use (per-patch) normalized pixels as targets for computing loss')
-    parser.add_argument('--window_size', default=7, type=int,
-                        help='window size')
-    parser.add_argument('--num_window', default=2, type=int,
-                        help='num window from one image')
     parser.set_defaults(norm_pix_loss=False)
 
     # Optimizer parameters

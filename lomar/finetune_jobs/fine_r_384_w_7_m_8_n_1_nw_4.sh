@@ -9,6 +9,7 @@
 #SBATCH --output=logs/fine_r_384_w_7_m_8_n_1_nw_4
 #SBATCH --error=fine_r_384_w_7_m_8_n_1_nw_4.err #The .error file name
 #SBATCH --output=fine_r_384_w_7_m_8_n_1_nw_4.out #The .output file name
+#SBATCH --account conf-cvpr-2022.11.18-elhosemh
 
 cd ..
 source /home/khanff/miniconda3/envs/lomar
@@ -18,7 +19,7 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
     --accum_iter 1 \
     --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/finetuned_r_384_mae_encoderonly_mask_0.8_neigh_1_wind_7_num_4_epochs_100 \
     --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven/finetuned_r_384_mae_encoderonly_mask_0.8_neigh_1_wind_7_num_4_epoches_100 \
-    --model vit_base_patch16 \
+    --model mae_vit_base_patch16_384 \
     --finetune /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/mae_encoderonly_mask_0.8_neigh_1_wind_7_num_4_epochs_100_r_384/checkpoint-99.pth \
     --epochs 100 \
     --blr 5e-4 --layer_decay 0.65 \

@@ -28,8 +28,8 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
     --warmup_epochs 5 \
     --blr 1.5e-4 --weight_decay 0.05 \
     --window_size 7 \
-    --num_window 1 \
+    --num_window 4 \
     --amp_autocast True \
     --neigh_ratio 0 \
-    --mask_ratio 0.1 \
+    --mask_ratio 0.8 \
     --data_path /ibex/ai/reference/CV/ILSVR/classification-localization/data/jpeg

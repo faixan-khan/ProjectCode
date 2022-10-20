@@ -29,11 +29,6 @@ class MaskedAutoencoderViT(nn.Module):
         super().__init__()
 
         # --------------------------------------------------------------------------
-        # LOMAR
-        self.img_size = img_size
-        self.patch_size =  patch_size
-
-        # --------------------------------------------------------------------------
         # MAE encoder specifics
         self.patch_embed = PatchEmbed(img_size, patch_size, in_chans, embed_dim)
         num_patches = self.patch_embed.num_patches
@@ -152,97 +147,29 @@ class MaskedAutoencoderViT(nn.Module):
 
         return x_masked, mask, ids_restore
 
-    def sample_patch_index(self, x, patch_index, keep_ratio):
-        N, H, W, D = x.shape
-        M,P = patch_index.shape
-        patch_index = patch_index.unsqueeze(0).expand(N,M,P)
-
-        noise = torch.rand(N,M,P, device=patch_index.device)  # noise in [0, 1]
-        ids_shuffle = torch.argsort(noise,dim=-1)  # ascend: small is keep, large is remove
-
-        ids_keep = ids_shuffle[:,:,:keep_ratio]
-        ids_unmasked = ids_shuffle[:,:,keep_ratio:]
-
-        patch_keeps = torch.gather(patch_index, -1, ids_keep)
-        patch_unmasked = torch.gather(patch_index, -1, ids_unmasked)
-
-        return patch_keeps, patch_unmasked, ids_shuffle
-
-    def generate_window_patches(self, x, left, top, window_size, mask_ratio):
-        
-        N, H, W, D = x.shape
-        window_number = left.shape[0]
-        
-        #  extract the windows based on the coordinates
-        left = left.unsqueeze(-1).expand(window_number,window_size)
-        top  = top.unsqueeze(-1).expand(window_number, window_size)
-
-        row = torch.arange(0,window_size,device=x.device).unsqueeze(0).expand(window_number,window_size)+left
-        column = torch.arange(0,window_size*W,W, device = x.device).unsqueeze(0).expand(window_number, window_size)+top*W        
-
-        in_window_mask_number = int(window_size*window_size*mask_ratio)  
-
-        assert in_window_mask_number>=1
-        in_window_patches =row.unsqueeze(1).expand(window_number,window_size,window_size)  + column.unsqueeze(-1).expand(left.shape[0],window_size,window_size)
-        in_window_patches = in_window_patches.view(window_number,-1)
-
-        # sample the masked patch ids
-        ids_mask_in_window, ids_unmask_in_window, ids_restore = self.sample_patch_index(x,in_window_patches,in_window_mask_number)
-
-        patches_to_keep = in_window_patches.unsqueeze(0).expand(N, window_number,window_size* window_size)
-        x = x.view(N,H*W,D).unsqueeze(0).repeat(window_number,1, 1,1).view(N*window_number,H*W,D)
-
-        sorted_patch_to_keep,_ = torch.sort(patches_to_keep,dim=-1)
-        sorted_patch_to_keep = sorted_patch_to_keep.view(N*window_number,-1)
-        ids_restore = ids_restore.view(N*window_number,-1)
-
-
-        ids_mask_in_window = ids_mask_in_window.view(N*window_number, -1)
-        ids_unmask_in_window = ids_unmask_in_window.view(N*window_number, -1)
-
-        mask_indices = ((sorted_patch_to_keep.unsqueeze(-1)- ids_mask_in_window.unsqueeze(1))==0).sum(-1)==1
-
-        # x_masked = torch.gather(x, dim=1, index=ids_mask_in_window.unsqueeze(-1).repeat(1, 1, D)).clone()
-        x_unmasked = torch.gather(x, dim=1, index=ids_unmask_in_window.unsqueeze(-1).repeat(1, 1, D)).clone()
-
-        # print(ids_restore.shape, sorted_patch_to_keep.shape)
-        # exit()
-        # print(x_unmasked.shape, sorted_patch_to_keep.shape, mask_indices.shape, ids_restore.shape)
-        return x_unmasked, sorted_patch_to_keep, mask_indices, ids_restore
-
-    def forward_encoder(self, x, window_size, num_window, mask_ratio):
+    def forward_encoder(self, x, mask_ratio):
         # embed patches
         x = self.patch_embed(x)
 
         # add pos embed w/o cls token
         x = x + self.pos_embed[:, 1:, :]
 
-        # faizan
-        N, _, C = x.shape
-        H = W = self.img_size // self.patch_size
-        x= x.view(N,H,W,C)
-
-        assert window_size<= H and window_size <=W
-
-        # sample window coordinates
-        rand_top_locations = torch.randperm(H-window_size+1,device=x.device)[:num_window]
-        rand_left_locations = torch.randperm(W-window_size+1,device=x.device)[:num_window]
-
-        x_unmasked, sorted_patch_to_keep, mask, ids_restore = self.generate_window_patches(x, rand_left_locations, rand_top_locations, window_size, mask_ratio)
+        # masking: length -> length * mask_ratio
+        x, mask, ids_restore = self.random_masking(x, mask_ratio)
 
         # append cls token
         cls_token = self.cls_token + self.pos_embed[:, :1, :]
-        cls_tokens = cls_token.expand(x_unmasked.shape[0], -1, -1)
-        x_unmasked = torch.cat((cls_tokens, x_unmasked), dim=1)
+        cls_tokens = cls_token.expand(x.shape[0], -1, -1)
+        x = torch.cat((cls_tokens, x), dim=1)
 
         # apply Transformer blocks
         for blk in self.blocks:
-            x_unmasked = blk(x_unmasked)
-        x_unmasked = self.norm(x_unmasked)
+            x = blk(x)
+        x = self.norm(x)
 
-        return x_unmasked, sorted_patch_to_keep, mask, ids_restore
+        return x, mask, ids_restore
 
-    def forward_decoder(self, x, ids_restore, sorted_patch_to_keep):
+    def forward_decoder(self, x, ids_restore):
         # embed tokens
         x = self.decoder_embed(x)
 
@@ -250,11 +177,11 @@ class MaskedAutoencoderViT(nn.Module):
         mask_tokens = self.mask_token.repeat(x.shape[0], ids_restore.shape[1] + 1 - x.shape[1], 1)
         x_ = torch.cat([x[:, 1:, :], mask_tokens], dim=1)  # no cls token
         x_ = torch.gather(x_, dim=1, index=ids_restore.unsqueeze(-1).repeat(1, 1, x.shape[2]))  # unshuffle
+        x = torch.cat([x[:, :1, :], x_], dim=1)  # append cls token
 
         # add pos embed
-        x_ = x_ + torch.gather(self.decoder_pos_embed.repeat(x_.shape[0],1,1), dim=1, index = sorted_patch_to_keep.unsqueeze(-1).repeat(1, 1, x_.shape[-1])+1)
-        x = torch.cat([x[:, :1, :], x_], dim=1)  # append cls token
-        # print(x.shape,'what')
+        x = x + self.decoder_pos_embed
+
         # apply Transformer blocks
         for blk in self.decoder_blocks:
             x = blk(x)
@@ -268,20 +195,13 @@ class MaskedAutoencoderViT(nn.Module):
 
         return x
 
-    def forward_loss(self, imgs, pred, mask, num_window, sorted_patch_to_keep):
+    def forward_loss(self, imgs, pred, mask):
         """
         imgs: [N, 3, H, W]
         pred: [N, L, p*p*3]
         mask: [N, L], 0 is keep, 1 is remove, 
         """
-
-
         target = self.patchify(imgs)
-        N,P,H = target.shape
-        target = target.unsqueeze(0).repeat(num_window,1,1,1).view(-1,P,H)
-        target = torch.gather(target,dim=1, index=sorted_patch_to_keep.unsqueeze(-1).repeat(1, 1, target.shape[-1]))
-
-
         if self.norm_pix_loss:
             mean = target.mean(dim=-1, keepdim=True)
             var = target.var(dim=-1, keepdim=True)
@@ -289,16 +209,14 @@ class MaskedAutoencoderViT(nn.Module):
 
         loss = (pred - target) ** 2
         loss = loss.mean(dim=-1)  # [N, L], mean loss per patch
-        # print(loss.mean(),'ok',mask.sum())
+
         loss = (loss * mask).sum() / mask.sum()  # mean loss on removed patches
-        # print(loss.mean(),'jj')
-        # exit()
         return loss
 
-    def forward(self, imgs, window_size, num_window, mask_ratio=0.75):
-        latent, sorted_patch_to_keep, mask, ids_restore = self.forward_encoder(imgs, window_size, num_window, mask_ratio)
-        pred = self.forward_decoder(latent, ids_restore, sorted_patch_to_keep)  # [N, L, p*p*3]
-        loss = self.forward_loss(imgs, pred, mask, num_window, sorted_patch_to_keep)
+    def forward(self, imgs, mask_ratio=0.75):
+        latent, mask, ids_restore = self.forward_encoder(imgs, mask_ratio)
+        pred = self.forward_decoder(latent, ids_restore)  # [N, L, p*p*3]
+        loss = self.forward_loss(imgs, pred, mask)
         return loss, pred, mask
 
 

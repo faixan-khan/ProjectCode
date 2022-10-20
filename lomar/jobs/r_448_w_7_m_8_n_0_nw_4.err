@@ -1,4 +1,4 @@
-/opt/slurm/cluster/raven/spool/gpu101-09-l/slurmd/job199133/slurm_script: line 15: source: /home/khanff/miniconda3/envs/lomar: is a directory
+/opt/slurm/cluster/raven/spool/gpu108-16-r/slurmd/job203497/slurm_script: line 15: source: /home/khanff/miniconda3/envs/lomar: is a directory
 /home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
 and will be removed in future. Use torchrun.
 Note that --use_env is set by default in torchrun.
@@ -24,3 +24,74 @@ Setting OMP_NUM_THREADS environment variable for each process to be 1 in default
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
 [W reducer.cpp:1303] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+Traceback (most recent call last):
+  File "main_pretrain_lomar.py", line 241, in <module>
+    main(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 345, in wrapper
+    return f(*args, **kwargs)
+  File "main_pretrain_lomar.py", line 220, in main
+    loss_scaler=loss_scaler, epoch=epoch)
+  File "/home/khanff/cvpr23/lomar/util/misc.py", line 315, in save_model
+    save_on_master(to_save, checkpoint_path)
+  File "/home/khanff/cvpr23/lomar/util/misc.py", line 213, in save_on_master
+    torch.save(*args, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 376, in save
+    with _open_file_like(f, 'wb') as opened_file:
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/mae_encoderonly_mask_0.8_neigh_0_wind_7_num_4_epochs_100_r_448/checkpoint-0.pth'
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 17212 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 17213 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 17214 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 17211) of binary: /home/khanff/miniconda3/envs/lomar/bin/python
+Traceback (most recent call last):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main_pretrain_lomar.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2022-10-20_14:21:32
+  host      : gpu108-16-r.ibex.kaust.edu.sa
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 17211)
+  error_file: /tmp/torchelastic_mans3s0f/none_09izoklj/attempt_0/0/error.json
+  traceback : Traceback (most recent call last):
+    File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 345, in wrapper
+      return f(*args, **kwargs)
+    File "main_pretrain_lomar.py", line 220, in main
+      loss_scaler=loss_scaler, epoch=epoch)
+    File "/home/khanff/cvpr23/lomar/util/misc.py", line 315, in save_model
+      save_on_master(to_save, checkpoint_path)
+    File "/home/khanff/cvpr23/lomar/util/misc.py", line 213, in save_on_master
+      torch.save(*args, **kwargs)
+    File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 376, in save
+      with _open_file_like(f, 'wb') as opened_file:
+    File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 230, in _open_file_like
+      return _open_file(name_or_buffer, mode)
+    File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/serialization.py", line 211, in __init__
+      super(_open_file, self).__init__(open(name, mode))
+  FileNotFoundError: [Errno 2] No such file or directory: '/ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/mae_encoderonly_mask_0.8_neigh_0_wind_7_num_4_epochs_100_r_448/checkpoint-0.pth'
+  
+============================================================
