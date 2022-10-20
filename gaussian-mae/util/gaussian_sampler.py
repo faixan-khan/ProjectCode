@@ -141,7 +141,7 @@ def mean_generation(window_size, N, n_gaussian, max_dims):
     # ==========================================================================
     # make sure the shapes are correct
     # ==========================================================================
-    print(m_h.shape, N, n_gaussian, 'what ')
+    # print(m_h.shape, N, n_gaussian, 'what ')
     assert m_h.shape == (N,n_gaussian)
     assert m_w.shape == (N,n_gaussian)
 

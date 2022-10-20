@@ -163,7 +163,7 @@ class MaskedAutoencoderViT(nn.Module):
         # reconstructed [p_mask], and the means to be used for reconstruction.  Yet,
         # we shuffle the data further, so the means are not always in order
         # --------------------------------------------------------------------------
-        # means_idx = means_mask.nonzero()[:,1].reshape(N,-1)
+        mean_indices = means_mask.nonzero()[:,1].reshape(N,-1)
 
         # Shuffle the means, 
         noise = torch.rand(N, L, device=x.device)  # noise in [0, 1]
@@ -197,6 +197,11 @@ class MaskedAutoencoderViT(nn.Module):
         assert (mask*means_mask).sum() == 0
 
         # --------------------------------------------------------------------------
+        # Put the indices of interest in one tensor
+        # --------------------------------------------------------------------------
+        indices = torch.cat((mean_indices,sample_idx), dim=1)
+
+        # --------------------------------------------------------------------------
         # Uncomment below for debugging
         # --------------------------------------------------------------------------
         # mask_res = means_mask+mask*3
@@ -205,7 +210,7 @@ class MaskedAutoencoderViT(nn.Module):
         # print("for Img 2")
         # print(mask_res[1,:].reshape(h,-1))
 
-        return x_masked, mask_ids_restore, ids_restore, mask                                                  
+        return x_masked, mask_ids_restore, ids_restore, mask, indices                                               
 
     def forward_encoder(self, x, reconstruction_per_gaussian):
         # embed patches
@@ -220,7 +225,8 @@ class MaskedAutoencoderViT(nn.Module):
         # --------------------------------------------------------------------------
         # masking: get the patches used for reconstruction, two indices for unshuff- 
         # le, and the mask for our target tokens
-        x, mask_ids_restore,ids_restore,mask = self.gaussian_masking(x, num_samples)
+        x, mask_ids_restore,ids_restore,mask, indices = self.gaussian_masking(x,
+                                                                        num_samples)
 
         # append cls token
         cls_token = self.cls_token + self.pos_embed[:, :1, :]
@@ -232,9 +238,9 @@ class MaskedAutoencoderViT(nn.Module):
             x = blk(x)
         x = self.norm(x)
 
-        return x, mask_ids_restore, ids_restore, mask
+        return x, mask_ids_restore, ids_restore, mask, indices
 
-    def forward_decoder(self, x, mask_ids_restore, ids_restore):
+    def forward_decoder(self, x, mask_ids_restore, ids_restore, patch_indices):
         
         # embed tokens
         x = self.decoder_embed(x)
@@ -249,6 +255,17 @@ class MaskedAutoencoderViT(nn.Module):
         # add pos embed
         x = x + self.decoder_pos_embed
 
+        # Uncomment for debugging
+        # print(f'X shape before: {x.shape}')
+
+        x_ = torch.gather(x[:, 1:, :], dim=1, index=patch_indices.unsqueeze(-1).repeat(1, 1, x.shape[2]))
+        # Sample the patches of interest
+        x = torch.cat([x[:, :1, :], x_], dim=1)
+        
+        # Uncomment for debugging
+        # N 1+12
+        # print(f'X shape after: {x.shape}')
+
         # apply Transformer blocks
         for blk in self.decoder_blocks:
             x = blk(x)
@@ -262,11 +279,12 @@ class MaskedAutoencoderViT(nn.Module):
 
         return x
 
-    def forward_loss(self, imgs, pred, mask):
+    def forward_loss(self, imgs, pred, patch_indices, num_patches):
         """
         imgs: [N, 3, H, W]
         pred: [N, L, p*p*3]
-        mask: [N, L], 0 is keep, 1 is remove, 
+        patch_indices: [N, num_gaussians*(1+reconstruction_per_gaussian)]
+        # mask: [N, L], 0 is keep, 1 is remove, 
         """
         target = self.patchify(imgs)
         if self.norm_pix_loss:
@@ -274,19 +292,25 @@ class MaskedAutoencoderViT(nn.Module):
             var = target.var(dim=-1, keepdim=True)
             target = (target - mean) / (var + 1.e-6)**.5
 
-        loss = (pred - target) ** 2
+        # Sample the patches of interest from here
+        target = torch.gather(target, dim=1, index=patch_indices.unsqueeze(\
+                                            -1).repeat(1, 1, target.shape[2]))
+
+        loss = (pred[:,self.__num_gaussians:,:] - target[:,self.__num_gaussians:,:]) ** 2
         loss = loss.mean(dim=-1)  # [N, L], mean loss per patch
 
-        loss = (loss * mask).sum() / mask.sum()  # mean loss on removed patches
+        # mask.sum()
+        loss = loss.sum() / (num_patches*imgs.shape[0])  # mean loss on removed patches
         return loss
 
     def forward(self, imgs, reconstruction_per_gaussian=3,num_gaussians=5, gaussian_size=6):
         self.__num_gaussians = num_gaussians
         self.__gaussian_size = gaussian_size
-        latent, mask_ids_restore, ids_restore, mask = self.forward_encoder(imgs,
+        latent, mask_ids_restore, ids_restore, mask, indices = self.forward_encoder(imgs,
                                                     reconstruction_per_gaussian)
-        pred = self.forward_decoder(latent, mask_ids_restore, ids_restore)  # [N, L, p*p*3]
-        loss = self.forward_loss(imgs, pred, mask)
+        pred = self.forward_decoder(latent, mask_ids_restore, ids_restore, indices)  # [N, L, p*p*3]
+        loss = self.forward_loss(imgs, pred, indices, 
+                                self.__num_gaussians*reconstruction_per_gaussian)
         return loss, pred, mask
 
 
