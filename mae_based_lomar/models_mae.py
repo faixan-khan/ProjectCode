@@ -195,12 +195,11 @@ class MaskedAutoencoderViT(nn.Module):
             indices_neigh_keep = indices_neigh[:,:,(window_size*window_size):]
             noise_neigh = torch.rand(N,window_number,indices_neigh_keep.size(2),device=x.device)
             ids_neigh_shuffle = torch.argsort(noise_neigh,dim=-1)
-            out_window_mask_number = int(((W*H)-(window_size*window_size))*neigh_ratio)
+            out_window_mask_number = int((window_size*window_size)*neigh_ratio)
             ids_keep_neigh = ids_neigh_shuffle[:,:,:out_window_mask_number]
             neigh_keeps = torch.gather(indices_neigh_keep, -1, ids_keep_neigh)
         else:
             neigh_keeps=[0]
-        # Where do we add the neighbour patches? encoder or deocder? I think encoder??
 
         # sample the masked patch ids
         ids_mask_in_window, ids_unmask_in_window, ids_restore = self.sample_patch_index(x,in_window_patches,in_window_mask_number)
@@ -259,7 +258,7 @@ class MaskedAutoencoderViT(nn.Module):
             x_unmasked = blk(x_unmasked)
 
         x_unmasked = self.norm(x_unmasked)
-        out_window_mask_number = int(((W*H)-(window_size*window_size))*neigh_ratio)
+        out_window_mask_number = int((window_size*window_size)*neigh_ratio)
         if out_window_mask_number:
             x_unmasked, x_neigh = x_unmasked[:,:-out_window_mask_number,:], x_unmasked[:,-out_window_mask_number:,:]
         else:

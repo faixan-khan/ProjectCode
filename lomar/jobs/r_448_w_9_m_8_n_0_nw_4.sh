@@ -18,8 +18,8 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
 --master_addr=127.0.0.1 --master_port=29517 main_pretrain_lomar.py \
     --batch_size 256 \
     --accum_iter 4 \
-    --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/mae_encoderonly_mask_0.8_neigh_0_wind_9_num_4_epochs_100_r_448 \
-    --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven/mae_encoderonly_mask_0.8_neigh_0_wind_9_num_4_epoches_100_r_448 \
+    --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven448/mae_encoderonly_mask_0.8_neigh_0_wind_9_num_4_epochs_100_r_448 \
+    --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven448/mae_encoderonly_mask_0.8_neigh_0_wind_9_num_4_epoches_100_r_448 \
     --model mae_vit_base_patch16_448 \
     --input_size 448 \
     --norm_pix_loss \

@@ -6,7 +6,7 @@
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-gpu=6
 #SBATCH --job-name=w_9_m_8_n_0_nw_4
-#SBATCH --output=logs/mae_encoderonly_mask_0.8_neigh_0.05_wind_7_8100epoches
+#SBATCH --output=logs/mae_encoderonly_mask_0.8_neigh_0_wind_7_8100epoches
 #SBATCH --error=w_9_m_8_n_0_nw_4.err #The .error file name
 #SBATCH --output=w_9_m_8_n_0_nw_4.out #The .output file name
 # SBATCH --account conf-cvpr-2022.11.18-elhosemh
@@ -28,6 +28,6 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
     --window_size 9 \
     --num_window 4 \
     --amp_autocast True \
-    --neigh_ratio 0.05 \
+    --neigh_ratio 0 \
     --mask_ratio 0.8 \
     --data_path /ibex/ai/reference/CV/ILSVR/classification-localization/data/jpeg

@@ -17,11 +17,10 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
 --master_addr=127.0.0.1 --master_port=29517 main_pretrain.py \
     --batch_size 256 \
     --accum_iter 4 \
-    --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven/original_mae_m_8_r_224 \
-    --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven/original_mae_m_8_r_224 \
+    --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven_mae/original_mae_m_8_r_224 \
+    --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven_mae/original_mae_m_8_r_224 \
     --model mae_vit_base_patch16 \
     --norm_pix_loss \
-    --distributed \
     --epochs 100 \
     --warmup_epochs 5 \
     --blr 1.5e-4 --weight_decay 0.05 \

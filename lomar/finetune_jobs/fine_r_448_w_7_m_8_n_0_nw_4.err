@@ -1,4 +1,4 @@
-/opt/slurm/cluster/raven/spool/gpu109-02-r/slurmd/job199868/slurm_script: line 14: source: /home/khanff/miniconda3/envs/lomar: is a directory
+/opt/slurm/cluster/raven/spool/gpu202-02-r/slurmd/job205416/slurm_script: line 14: source: /home/khanff/miniconda3/envs/lomar: is a directory
 /home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
 and will be removed in future. Use torchrun.
 Note that --use_env is set by default in torchrun.
@@ -100,884 +100,161 @@ Setting OMP_NUM_THREADS environment variable for each process to be 1 in default
   "Argument interpolation should be of type InterpolationMode instead of int. "
 /home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
   "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torchvision/transforms/functional.py:405: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
-  "Argument interpolation should be of type InterpolationMode instead of int. "
-slurmstepd: error: *** JOB 199868 ON gpu109-02-r CANCELLED AT 2022-10-18T15:20:46 ***
+Traceback (most recent call last):
+  File "main_finetune_lomar.py", line 356, in <module>
+    main(args)
+  File "main_finetune_lomar.py", line 318, in main
+    args=args
+  File "/home/khanff/cvpr23/lomar/engine_finetune.py", line 56, in train_one_epoch
+    outputs = model(samples)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 281, in forward
+    x = self.forward_features(x)
+  File "/home/khanff/cvpr23/lomar/models_vit.py", line 44, in forward_features
+    x = blk(x)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 141, in forward
+    x = x + self.drop_path(self.attn(self.norm1(x)))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 120, in forward
+    x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 0; 79.35 GiB total capacity; 72.87 GiB already allocated; 3.32 GiB free; 73.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "main_finetune_lomar.py", line 356, in <module>
+    main(args)
+  File "main_finetune_lomar.py", line 318, in main
+    args=args
+  File "/home/khanff/cvpr23/lomar/engine_finetune.py", line 56, in train_one_epoch
+    outputs = model(samples)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 281, in forward
+    x = self.forward_features(x)
+  File "/home/khanff/cvpr23/lomar/models_vit.py", line 44, in forward_features
+    x = blk(x)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 141, in forward
+    x = x + self.drop_path(self.attn(self.norm1(x)))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 120, in forward
+    x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 3; 79.35 GiB total capacity; 72.87 GiB already allocated; 3.32 GiB free; 73.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "main_finetune_lomar.py", line 356, in <module>
+    main(args)
+  File "main_finetune_lomar.py", line 318, in main
+    args=args
+  File "/home/khanff/cvpr23/lomar/engine_finetune.py", line 56, in train_one_epoch
+    outputs = model(samples)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 281, in forward
+    x = self.forward_features(x)
+  File "/home/khanff/cvpr23/lomar/models_vit.py", line 44, in forward_features
+    x = blk(x)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 141, in forward
+    x = x + self.drop_path(self.attn(self.norm1(x)))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 120, in forward
+    x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 2; 79.35 GiB total capacity; 72.87 GiB already allocated; 3.30 GiB free; 73.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "main_finetune_lomar.py", line 356, in <module>
+    main(args)
+  File "main_finetune_lomar.py", line 318, in main
+    args=args
+  File "/home/khanff/cvpr23/lomar/engine_finetune.py", line 56, in train_one_epoch
+    outputs = model(samples)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/parallel/distributed.py", line 886, in forward
+    output = self.module(*inputs[0], **kwargs[0])
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 281, in forward
+    x = self.forward_features(x)
+  File "/home/khanff/cvpr23/lomar/models_vit.py", line 44, in forward_features
+    x = blk(x)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 141, in forward
+    x = x + self.drop_path(self.attn(self.norm1(x)))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/timm/models/vision_transformer.py", line 120, in forward
+    x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+RuntimeError: CUDA out of memory. Tried to allocate 3.53 GiB (GPU 1; 79.35 GiB total capacity; 72.87 GiB already allocated; 3.30 GiB free; 73.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 8909) of binary: /home/khanff/miniconda3/envs/lomar/bin/python
+Traceback (most recent call last):
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/run.py", line 713, in run
+    )(*cmd_args)
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+main_finetune_lomar.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2022-10-23_12:43:05
+  host      : gpu202-02-r.ibex.kaust.edu.sa
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 8910)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2022-10-23_12:43:05
+  host      : gpu202-02-r.ibex.kaust.edu.sa
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 8911)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2022-10-23_12:43:05
+  host      : gpu202-02-r.ibex.kaust.edu.sa
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 8912)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2022-10-23_12:43:05
+  host      : gpu202-02-r.ibex.kaust.edu.sa
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 8909)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

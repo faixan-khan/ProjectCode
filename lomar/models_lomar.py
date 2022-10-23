@@ -208,7 +208,7 @@ class MaskedAutoencoderViT(nn.Module):
         indices_neigh_keep = indices_neigh[:,:,(window_size*window_size):]
         noise_neigh = torch.rand(N,window_number,indices_neigh_keep.size(2),device=x.device)
         ids_neigh_shuffle = torch.argsort(noise_neigh,dim=-1)
-        out_window_mask_number = int(((W*H)-(window_size*window_size))*neigh_ratio)
+        out_window_mask_number = int((window_size*window_size)*neigh_ratio)
         ids_keep_neigh = ids_neigh_shuffle[:,:,:out_window_mask_number]
         neigh_keeps = torch.gather(indices_neigh_keep, -1, ids_keep_neigh)
 
@@ -240,7 +240,6 @@ class MaskedAutoencoderViT(nn.Module):
         # faizan's code
         if out_window_mask_number > 0:
             x_masked = torch.cat((x_masked, x_neigh), dim=1)
-
         return x_masked, sorted_patch_to_keep, mask_indices, neigh_keeps
 
 

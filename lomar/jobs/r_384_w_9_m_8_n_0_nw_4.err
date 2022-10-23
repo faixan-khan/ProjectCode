@@ -1,4 +1,4 @@
-/opt/slurm/cluster/raven/spool/gpu201-02-r/slurmd/job203493/slurm_script: line 15: source: /home/khanff/miniconda3/envs/lomar: is a directory
+/opt/slurm/cluster/raven/spool/gpu202-09-l/slurmd/job204489/slurm_script: line 15: source: /home/khanff/miniconda3/envs/lomar: is a directory
 /home/khanff/miniconda3/envs/lomar/lib/python3.6/site-packages/torch/distributed/launch.py:186: FutureWarning: The module torch.distributed.launch is deprecated
 and will be removed in future. Use torchrun.
 Note that --use_env is set by default in torchrun.
