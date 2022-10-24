@@ -9,35 +9,30 @@ import torch
 def get_mean_dim(m_dim, win, dim_size):
     """returns the mean point for a particular  dimension for our gaussian gene-
     ration to make sure the distribution remains within the image"""
-    if win>dim_size:
-        m_dim = torch.ones(m_dim.shape)*dim_size//2
-    else:
-        min_m_dim = win//2
-        max_m_dim = dim_size-min_m_dim
-        m_dim = torch.clip(m_dim, min_m_dim, max_m_dim)
+    min_m_dim = win//2
+    max_m_dim = dim_size-min_m_dim
+    m_dim = torch.clip(m_dim, min_m_dim, max_m_dim)
     return m_dim
 
-def generate_gaussian_2D_1D(h, w, m_h, m_w, win, enable_out = True,
-                            mean_mask = True):
+def generate_gaussian_2D_1D(h: int, w: int, m_h: torch.Tensor, m_w: torch.Tensor,
+                            win: int, device):
     """generates a 2D gaussian distribution in a matrix and 
     
     - h: 2D grid height
     - w: 2D grid width
     - m_h: the mean points with respect to the height axis
     - m_w: the mean points with respect to the width axis
-    - win: window size"""
+    - win: window size
+    
+    ----------------------------------------------------------------------------
+    NOTE: the returned probability distribution is not normalized
+    """
     N = m_h.shape[0]
     # we scale the range of values as the number of points is  different to have
     # an indentity covariance matrix
     min_dim = min(h, w)
     h_ratio = h/min_dim
     w_ratio = w/min_dim
-
-
-    # to make sure we do not go out of the image while generating
-    if not enable_out:
-        m_h = get_mean_dim(m_h, win, h)
-        m_w = get_mean_dim(m_w, win, w)
 
     # define the range of values accroding to the mean h and w
     S_H = -2*m_h/h
@@ -48,10 +43,7 @@ def generate_gaussian_2D_1D(h, w, m_h, m_w, win, enable_out = True,
 
     # ==========================================================================
     # TODO: modify the code to generate N 2D gaussians
-    dist = torch.empty(size=(N, h*w))
-    means_mask = None
-    if mean_mask:
-        means_mask = torch.zeros(dist.shape)
+    dist = torch.empty(size=(N, h*w), device= device)
     i = -1
     for s_h, e_h, s_w, e_w in zip(S_H, E_H, S_W, E_W):
         i += 1
@@ -71,13 +63,9 @@ def generate_gaussian_2D_1D(h, w, m_h, m_w, win, enable_out = True,
         sigma = win/min_dim/3
         # now, generate the 2D gaussian
         g = torch.exp(-( (d)**2 / ( 2.0 * sigma**2 ) ) )
-        if mean_mask:
-            g[m_h[i].item(),m_w[i].item()] = 0
-            mean_indx = m_h[i].item()*w+m_w[i].item()
-            means_mask[i,mean_indx] = 1
         # return the normalized version of it
-        dist[i,:] = torch.reshape(g/g.sum(), (-1,))
-    return dist, means_mask
+        dist[i,:] = torch.reshape(g, (-1,))
+    return dist #means_mask
 
 def sample_indices_1D(p_mask, num_samples):
     """The method samples patches from a 1D mask and return their indices"""
@@ -96,13 +84,14 @@ def generate_binary_mask_1D(mask_shape, idx):
     assert (b_mask.sum(dim=1) == idx.shape[1]).prod() == 1
     return b_mask
 
-def mean_generation(window_size, N, n_gaussian, max_dims):
+def mean_generation(window_size, N, n_gaussian, max_dims, device):
     """the method randomly picks mean points for our gaussian generation
 
     - window_size: the size of the generated gaussians
     - N: number of patch grids
     - n_gaussian: the number of gaussians per a single image
     - max_dims: a tuple of the size of the 2D grid
+    - device: the device of the means
     """
     patches_h, patches_w = max_dims
     # all the windows are of the same shape
@@ -118,11 +107,11 @@ def mean_generation(window_size, N, n_gaussian, max_dims):
     # We generate the means  in such way to make sure the means do not duplicate
     # for a single image
     # --------------------------------------------------------------------------
-    mean_indx = torch.randperm(patches_h*patches_w).expand((N,-1))
+    mean_indx = torch.randperm(patches_h*patches_w, device= device).expand((N,-1))
     # p_h = (torch.randperm(max_h-min_h)+min_h).expand((N,-1))
     # p_w = (torch.randperm(max_w-min_w)+min_w).expand((N,-1))
 
-    noise = torch.rand(mean_indx.shape)
+    noise = torch.rand(mean_indx.shape, device= device)
 
     # noise_h = torch.rand(p_h.shape)
     # noise_w = torch.rand(p_w.shape)
@@ -150,50 +139,35 @@ def mean_generation(window_size, N, n_gaussian, max_dims):
 # ==============================================================================
 # Here, we will generate multiple  independent gaussian distributions  and merge
 # them to have a mixture of gaussians
-def mixture_gaussians_1D(N, n_gaussian, window_sizes, patches_h, patches_w, 
-                         enable_out=True, mean_mask = True):
+def mixture_gaussians_1D(N, n_gaussian, window_size, patches_h, patches_w,
+                         device, enable_out=True, mean_mask = True):
     # Randomly set the mean
-    if len(window_sizes.unique()) == 1:
-        # ======================================================================
-        # Make sure the window of the gaussian fits into the grid
-        assert window_sizes[0] < patches_h and window_sizes[0] < patches_w
-        m_h , m_w = mean_generation(window_sizes[0].item(), N, n_gaussian, 
-                                    (patches_h,patches_w))
-
-
-        
-        # m_h = torch.randint(min_h,max_h,(N, n_gaussian))
-        # m_w = torch.randint(min_w,max_w,(N, n_gaussian,))
-        # m_h = (torch.randperm(max_h-min_h)+min_h)[:n_gaussian]
-        # m_w = (torch.randperm(max_w-min_w)+min_w)[:n_gaussian]
-    else:
-        pass
-        # m_h = torch.zeros(n_gaussian,dtype=int)
-        # m_w = torch.zeros(n_gaussian,dtype=int)
-        # for indx in range(len(window_sizes)):
-        #     min_h = window_sizes[indx].item()//2
-        #     max_h = patches_h - min_h + 1
-
-        #     min_w = min_h
-        #     max_w = patches_w - min_w + 1
-        #     m_h[indx] = torch.randint(min_h,max_h,(1,))
-        #     m_w[indx] = torch.randint(min_w,max_w,(1,))
+    # ==========================================================================
+    # Make sure the window of the gaussian fits into the grid
+    assert window_size < patches_h and window_size < patches_w
+    m_h , m_w = mean_generation(window_size, N, n_gaussian, 
+                                (patches_h,patches_w), device)
+    # to make sure we do not go out of the image while generating
+    if not enable_out:
+        m_h = get_mean_dim(m_h, window_size, patches_h)
+        m_w = get_mean_dim(m_w, window_size, patches_w)
     # ==========================================================================
     # Now generate the gaussians
-    p_mask = torch.zeros(N, patches_h*patches_w)
+    p_mask = torch.zeros(N, patches_h*patches_w, device= device)
     means_mask = None
     if mean_mask:
-        means_mask = torch.zeros(p_mask.shape)
-    for gaussian_indx in range(len(window_sizes)):
-        p,means = generate_gaussian_2D_1D(patches_h, patches_w, 
+        means_mask = torch.zeros(p_mask.shape, dtype=torch.uint8, device= device)
+        means_indx = m_h*patches_w + m_w
+        means_mask[((torch.arange(means_mask.shape[0]).unsqueeze(1).repeat(1,
+                                        means_indx.shape[1])), means_indx)] = 1
+    for gaussian_indx in range(n_gaussian):
+        p = generate_gaussian_2D_1D(patches_h, patches_w,
                                     m_h[:,gaussian_indx], 
                                     m_w[:,gaussian_indx],
-                                    window_sizes[gaussian_indx].item(),
-                                    enable_out, mean_mask)
+                                    window_size, device)
         p_mask += p
-        if mean_mask:
-            means_mask += means
     if mean_mask:
+        
         p_mask = (1-means_mask)*p_mask
         # We have N*n_gaussian number of gaussians
         assert means_mask.nonzero().shape[0]==N*n_gaussian

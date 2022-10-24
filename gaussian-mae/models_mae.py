@@ -150,10 +150,10 @@ class MaskedAutoencoderViT(nn.Module):
         assert h * w == L
         
         # Generate window sizes; all are essentially of the same size
-        window_sizes = torch.ones(self.__num_gaussians, dtype=torch.uint8)*self.__gaussian_size
+        # window_sizes = torch.ones(self.__num_gaussians, dtype=torch.uint8)*self.__gaussian_size
 
         p_mask, means_mask = mixture_gaussians_1D(N,self.__num_gaussians, 
-                                                  window_sizes, h, w)
+                                                  self.__gaussian_size, h, w, x.device)
         
         means_mask = means_mask.to(x.device)
         p_mask = p_mask.to(x.device)
