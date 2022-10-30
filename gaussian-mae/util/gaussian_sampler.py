@@ -5,6 +5,29 @@
 # the root directory of this source tree.
 # ------------------------------------------------------------------------------
 import torch
+from  torch.distributions.multivariate_normal import MultivariateNormal
+from torch.distributions.mixture_same_family import MixtureSameFamily
+import torch.distributions as D
+
+# ==============================================================================
+# Save time and memory with singleton
+# ==============================================================================
+class _Singleton_Points:
+    _instance = None
+    
+    def __init__(self, N, patches_h, patches_w, device):
+        i_rng = torch.arange(patches_h, device=device)
+        j_rng = torch.arange(patches_w, device=device)
+        points = torch.cartesian_prod(i_rng, j_rng).reshape(patches_h,
+                                                            patches_w,-1)
+        self._instance = points.unsqueeze(dim=-2).expand(-1,-1,N,-1)
+
+
+def Points(N, patches_h, patches_w, device):
+    if _Singleton_Points._instance is None:
+        _Singleton_Points._instance = _Singleton_Points(N, patches_h, patches_w,
+                                                                         device)
+    return _Singleton_Points._instance
 
 def get_mean_dim(m_dim, win, dim_size):
     """returns the mean point for a particular  dimension for our gaussian gene-
@@ -140,6 +163,49 @@ def mean_generation(window_size, N, n_gaussian, max_dims, device):
 # Here, we will generate multiple  independent gaussian distributions  and merge
 # them to have a mixture of gaussians
 def mixture_gaussians_1D(N, n_gaussian, window_size, patches_h, patches_w,
+                         device, enable_out=True, mean_mask = True):
+    # Randomly set the mean
+    # ==========================================================================
+    # Make sure the window of the gaussian fits into the grid
+    assert window_size < patches_h and window_size < patches_w
+    m_h , m_w = mean_generation(window_size, N, n_gaussian, 
+                                (patches_h,patches_w), device)
+    # to make sure we do not go out of the image while generating
+    if not enable_out:
+        m_h = get_mean_dim(m_h, window_size, patches_h)
+        m_w = get_mean_dim(m_w, window_size, patches_w)
+    m = torch.stack((m_h,m_w),dim=-1)
+    # ==========================================================================
+    # Now generate the gaussians
+    means_mask = None
+    if mean_mask:
+        means_mask = torch.zeros(N, patches_h*patches_w, dtype=torch.uint8,
+                                                                 device=device)
+        means_indx = m_h*patches_w + m_w
+        means_mask[((torch.arange(means_mask.shape[0]).unsqueeze(1).expand(-1,
+                                        means_indx.shape[1])), means_indx)] = 1
+    mix = D.Categorical(torch.ones(N, n_gaussian, device= device))
+    sgma = window_size/3
+    cov = torch.eye(2, device= device).unsqueeze(0).unsqueeze(1).expand(\
+                                                      (N,n_gaussian,-1,-1))*sgma
+    dist_1 = MultivariateNormal(loc=m, covariance_matrix=cov)
+    dist = MixtureSameFamily(mix, dist_1)
+    points = Points(N, patches_h, patches_w, device)
+    p_mask = torch.exp(dist.log_prob(points)).permute(2,0,1).reshape(N,-1)
+    if mean_mask:
+        p_mask = (1-means_mask)*(p_mask+1e-6)
+        # We have N*n_gaussian number of gaussians
+        assert means_mask.nonzero().shape[0]==N*n_gaussian
+        # Make sure that all the means have 0 probability
+        assert (((1-means_mask)*p_mask)==p_mask).prod().item() == 1
+    # Normalize your probability distribution
+    p_mask = p_mask / p_mask.sum(dim=1).reshape(-1,1)
+    return p_mask, means_mask
+
+# ==============================================================================
+# Here, we will generate multiple  independent gaussian distributions  and merge
+# them to have a mixture of gaussians
+def _mixture_gaussians_1D(N, n_gaussian, window_size, patches_h, patches_w,
                          device, enable_out=True, mean_mask = True):
     # Randomly set the mean
     # ==========================================================================
