@@ -20,6 +20,7 @@ class _Singleton_Points:
         j_rng = torch.arange(patches_w, device=device)
         points = torch.cartesian_prod(i_rng, j_rng).reshape(patches_h,
                                                             patches_w,-1)
+        points = points.type(torch.float32)
         self._instance = points.unsqueeze(dim=-2).expand(-1,-1,N,-1)
 
 
@@ -27,7 +28,7 @@ def Points(N, patches_h, patches_w, device):
     if _Singleton_Points._instance is None:
         _Singleton_Points._instance = _Singleton_Points(N, patches_h, patches_w,
                                                                          device)
-    return _Singleton_Points._instance
+    return _Singleton_Points._instance._instance
 
 def get_mean_dim(m_dim, win, dim_size):
     """returns the mean point for a particular  dimension for our gaussian gene-
