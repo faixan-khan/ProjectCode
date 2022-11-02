@@ -14,8 +14,8 @@ cd ..
 source /home/khanff/miniconda3/envs/lomar
 python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
 --master_addr=127.0.0.1 --master_port=29514 main_finetune_lomar.py \
-    --batch_size 256 \
-    --accum_iter 1 \
+    --batch_size 64 \
+    --accum_iter 4 \
     --input_size 448 \
     --output_dir /ibex/ai/project/c2090/lomar_plus_save/checkpoint/raven448/finetuned_mae_encoderonly_mask_0.8_neigh_45_wind_7_num_4_epochs_100_r_448 \
     --log_dir /ibex/ai/project/c2090/lomar_plus_save/logs/raven448/finetuned_mae_encoderonly_mask_0.8_neigh_45_wind_7_num_4_epoches_100_r_448 \

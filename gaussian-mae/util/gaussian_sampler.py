@@ -27,7 +27,7 @@ def Points(N, patches_h, patches_w, device):
     if _Singleton_Points._instance is None:
         _Singleton_Points._instance = _Singleton_Points(N, patches_h, patches_w,
                                                                          device)
-    return _Singleton_Points._instance
+    return _Singleton_Points._instance._instance
 
 def get_mean_dim(m_dim, win, dim_size):
     """returns the mean point for a particular  dimension for our gaussian gene-
@@ -191,7 +191,8 @@ def mixture_gaussians_1D(N, n_gaussian, window_size, patches_h, patches_w,
     dist_1 = MultivariateNormal(loc=m, covariance_matrix=cov)
     dist = MixtureSameFamily(mix, dist_1)
     points = Points(N, patches_h, patches_w, device)
-    p_mask = torch.exp(dist.log_prob(points)).permute(2,0,1).reshape(N,-1)
+    points = points.type(torch.float32)
+    p_mask = torch.exp(dist.log_prob((points))).permute(2,0,1).reshape(N,-1)
     if mean_mask:
         p_mask = (1-means_mask)*(p_mask+1e-6)
         # We have N*n_gaussian number of gaussians

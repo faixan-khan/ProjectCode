@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-gpu=6
 #SBATCH --job-name=w_7_m_8_n_15_nw_4_maebased
 #SBATCH --output=logs/w_7_m_8_n_15_nw_4_maebased
-#SBATCH --error=w_7_m_8_n_15_nw_4_maebased #The .error file name
-#SBATCH --output=w_7_m_8_n_15_nw_4_maebased #The .output file name
+#SBATCH --error=w_7_m_8_n_15_nw_4_maebased.err #The .error file name
+#SBATCH --output=w_7_m_8_n_15_nw_4_maebased.out #The .output file name
 #SBATCH --account conf-cvpr-2022.11.18-elhosemh
 
 
@@ -28,5 +28,5 @@ python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 \
     --window_size 7 \
     --num_window 4 \
     --mask_ratio 0.8 \
-    --neigh_ratio 0.15
+    --neigh_ratio 0.15 \
     --data_path /ibex/ai/reference/CV/ILSVR/classification-localization/data/jpeg
