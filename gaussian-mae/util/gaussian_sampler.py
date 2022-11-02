@@ -20,6 +20,7 @@ class _Singleton_Points:
         j_rng = torch.arange(patches_w, device=device)
         points = torch.cartesian_prod(i_rng, j_rng).reshape(patches_h,
                                                             patches_w,-1)
+        points = points.type(torch.float32)
         self._instance = points.unsqueeze(dim=-2).expand(-1,-1,N,-1)
 
 
